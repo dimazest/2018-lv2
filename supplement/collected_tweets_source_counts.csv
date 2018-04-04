@@ -1,0 +1,35 @@
+SELECT 10
+SELECT 1490643
+SELECT 30
+SELECT 30
+source,total_count,total_share,lang,source_lang_count,source_count,source_lang_share,other_lang_count,other_lang_share
+"<a href=""http://twitter.com"" rel=""nofollow"">Twitter Web Client</a>",607303,  37.1%,en,72742,507792,  12.0%,99511,  16.4%
+"<a href=""http://twitter.com"" rel=""nofollow"">Twitter Web Client</a>",607303,  37.1%,lv,402837,507792,  66.3%,99511,  16.4%
+"<a href=""http://twitter.com"" rel=""nofollow"">Twitter Web Client</a>",607303,  37.1%,ru,32213,507792,   5.3%,99511,  16.4%
+"<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>",284566,  17.4%,en,47949,245555,  16.8%,39011,  13.7%
+"<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>",284566,  17.4%,lv,121099,245555,  42.6%,39011,  13.7%
+"<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>",284566,  17.4%,ru,76507,245555,  26.9%,39011,  13.7%
+"<a href=""http://twitter.com/download/android"" rel=""nofollow"">Twitter for Android</a>",264615,  16.2%,en,42475,238929,  16.1%,25686,   9.7%
+"<a href=""http://twitter.com/download/android"" rel=""nofollow"">Twitter for Android</a>",264615,  16.2%,lv,157061,238929,  59.4%,25686,   9.7%
+"<a href=""http://twitter.com/download/android"" rel=""nofollow"">Twitter for Android</a>",264615,  16.2%,ru,39393,238929,  14.9%,25686,   9.7%
+"<a href=""https://about.twitter.com/products/tweetdeck"" rel=""nofollow"">TweetDeck</a>",92064,   5.6%,en,1264,91548,   1.4%,516,   0.6%
+"<a href=""https://about.twitter.com/products/tweetdeck"" rel=""nofollow"">TweetDeck</a>",92064,   5.6%,lv,90213,91548,  98.0%,516,   0.6%
+"<a href=""https://about.twitter.com/products/tweetdeck"" rel=""nofollow"">TweetDeck</a>",92064,   5.6%,ru,71,91548,   0.1%,516,   0.6%
+"<a href=""http://foursquare.com"" rel=""nofollow"">Foursquare</a>",61420,   3.8%,en,4338,54841,   7.1%,6579,  10.7%
+"<a href=""http://foursquare.com"" rel=""nofollow"">Foursquare</a>",61420,   3.8%,lv,50105,54841,  81.6%,6579,  10.7%
+"<a href=""http://foursquare.com"" rel=""nofollow"">Foursquare</a>",61420,   3.8%,ru,398,54841,   0.6%,6579,  10.7%
+"<a href=""http://www.tvnet.lv"" rel=""nofollow"">TVNET Login</a>",47253,   2.9%,en,15,46718,   0.0%,535,   1.1%
+"<a href=""http://www.tvnet.lv"" rel=""nofollow"">TVNET Login</a>",47253,   2.9%,lv,22055,46718,  46.7%,535,   1.1%
+"<a href=""http://www.tvnet.lv"" rel=""nofollow"">TVNET Login</a>",47253,   2.9%,ru,24648,46718,  52.2%,535,   1.1%
+"<a href=""http://instagram.com"" rel=""nofollow"">Instagram</a>",41811,   2.6%,en,13310,33178,  31.8%,8633,  20.6%
+"<a href=""http://instagram.com"" rel=""nofollow"">Instagram</a>",41811,   2.6%,lv,15585,33178,  37.3%,8633,  20.6%
+"<a href=""http://instagram.com"" rel=""nofollow"">Instagram</a>",41811,   2.6%,ru,4283,33178,  10.2%,8633,  20.6%
+"<a href=""https://dlvrit.com/"" rel=""nofollow"">dlvr.it</a>",39268,   2.4%,en,173,38931,   0.4%,337,   0.9%
+"<a href=""https://dlvrit.com/"" rel=""nofollow"">dlvr.it</a>",39268,   2.4%,lv,37535,38931,  95.6%,337,   0.9%
+"<a href=""https://dlvrit.com/"" rel=""nofollow"">dlvr.it</a>",39268,   2.4%,ru,1223,38931,   3.1%,337,   0.9%
+"<a href=""http://www.facebook.com/twitter"" rel=""nofollow"">Facebook</a>",30220,   1.8%,en,443,29064,   1.5%,1156,   3.8%
+"<a href=""http://www.facebook.com/twitter"" rel=""nofollow"">Facebook</a>",30220,   1.8%,lv,11533,29064,  38.2%,1156,   3.8%
+"<a href=""http://www.facebook.com/twitter"" rel=""nofollow"">Facebook</a>",30220,   1.8%,ru,17088,29064,  56.5%,1156,   3.8%
+"<a href=""https://mobile.twitter.com"" rel=""nofollow"">Twitter Lite</a>",22123,   1.4%,en,1202,21395,   5.4%,728,   3.3%
+"<a href=""https://mobile.twitter.com"" rel=""nofollow"">Twitter Lite</a>",22123,   1.4%,lv,19805,21395,  89.5%,728,   3.3%
+"<a href=""https://mobile.twitter.com"" rel=""nofollow"">Twitter Lite</a>",22123,   1.4%,ru,388,21395,   1.8%,728,   3.3%
