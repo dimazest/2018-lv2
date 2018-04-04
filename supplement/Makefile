@@ -1,4 +1,4 @@
-PSQL = psql -d twitter -eX
+PSQL = psql -d twitter -eXq
 
 default: queries counts.txt
 
