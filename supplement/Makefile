@@ -6,6 +6,7 @@ default: queries counts.txt
 	${PSQL} -f $< -o $@
 
 sql/rehydrated_tweets.sql: sql/collected_tweets.sql
+sql/rehydrated_tweets_%.sql: sql/rehydrated_tweets.sql
 
 queries: $(patsubst sql/%.sql,%.csv,$(wildcard sql/*.sql))
 

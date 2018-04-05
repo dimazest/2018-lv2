@@ -1,6 +1,6 @@
 select features#>>'{filter,source}' source, count(*) tweet_count, to_char(100.0 * count(*) / (select count(*) from tweet where collection = 'lv2'), '990D0%') as share 
 into temporary table top_sources
-from tweet
+from lv2_rehydrated_tweets
 where collection = 'lv2'
 group by source
 order by count(*) desc
@@ -9,7 +9,7 @@ limit 10
 
 select s.*, t.features#>>'{languages,0}' lang
 into temporary table _
-from tweet t
+from lv2_rehydrated_tweets t
 right join top_sources s on t.features#>>'{filter,source}' = s.source
 where t.collection = 'lv2'
 ;
