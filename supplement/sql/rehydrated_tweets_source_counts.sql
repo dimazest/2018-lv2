@@ -1,4 +1,7 @@
-select features#>>'{filter,source}' source, count(*) tweet_count, to_char(100.0 * count(*) / (select count(*) from tweet where collection = 'lv2'), '990D0%') as share 
+select
+  features#>>'{filter,source}' source,
+  count(*) tweet_count,
+  to_char(100.0 * count(*) / (select count(*) from lv2_rehydrated_tweets where collection = 'lv2'), '990D0%') as share 
 into temporary table top_sources
 from lv2_rehydrated_tweets
 where collection = 'lv2'
