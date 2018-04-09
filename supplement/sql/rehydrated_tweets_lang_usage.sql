@@ -21,11 +21,11 @@ __ as (
   window sn as (partition by screen_name_id order by screen_name_id)
   order by total desc
 )
-select *
+select row_number() over () rnum, *
 from __
 where total >= 50
 ;
 
 commit;
 
-\copy (select lv, ru, en, total from lv2_lang_usage) to stdin with csv header
+\copy (select rnum, lv, ru, en, total from lv2_lang_usage) to stdin with csv header
