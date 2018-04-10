@@ -7,7 +7,7 @@ create temporary table default_judgments as table eval_relevance_judgment with n
 insert into default_judgments
 select
   :'RTS_ID' eval_topic_rts_id, 'lv2' collection,  tweet_id,
-   2 judgment,
+   1 judgment,
   null "position", false missing, null crowd_relevant, null crowd_not_relevant,
   true from_dev
 from tweet
