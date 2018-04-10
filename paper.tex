@@ -1,5 +1,22 @@
 \documentclass{IOS-Book-Article}
 
+\usepackage[square,numbers,sort]{natbib}
+
+\usepackage{color}
+\usepackage[pdfusetitle]{hyperref}
+% http://colorschemedesigner.com/#4o42FfqublRMS
+\definecolor{linkcolor}{RGB}{66, 54, 122}
+\definecolor{citecolor}{RGB}{84, 141, 100}
+\definecolor{urlcolor}{RGB}{168, 70, 67}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkcolor,
+  citecolor=citecolor,
+  urlcolor=urlcolor,
+}
+
+\usepackage{todonotes}
+
 \usepackage{mathptmx}
 
 %\usepackage{times}
@@ -15,16 +32,17 @@
 \runningtitle{LV2}
 %\subtitle{Subtitle}
 
-%\author[A]{\fnms{First} \snm{Last}%
-%\thanks{Corresponding Author: Book Production Manager, IOS Press, Nieuwe Hemweg 6B,
-%1013 BG Amsterdam, The Netherlands; E-mail:
-%bookproduction@iospress.nl.}},
+\author[A]{\fnms{Anonymous} \snm{Submission}%
+\thanks{Corresponding Author: Book Production Manager, IOS Press, Nieuwe Hemweg 6B,
+1013 BG Amsterdam, The Netherlands; E-mail:
+bookproduction@iospress.nl.}}
 %\author[B]{\fnms{Second} \snm{Author}}
 %and
-%\author[B]{\fnms{Third} \snm{Author}}
+%\author[B]{\fnms{Third} \snm{Author}
+
 
 %\runningauthor{B.P. Manager et al.}
-%\address[A]{Somewhere, Some Country}
+\address[A]{Confidential Review Copy, Do Not Distribute}
 %\address[B]{Short Affiliation of Second Author and Third Author}
 
 %\begin{abstract}
@@ -41,6 +59,16 @@ Corpus Linguistics \sep Latvian \sep Russian \sep English
 
 \section*{Introduction}
 
-\section{Typographical Style and Layout}
+The paper present a multilingual, location-anchored corpus of tweets from Latvia. A difficulty of collecting a socially representative corpus from the country is that several languages are used there: Latvian is the main communication language, Russian is the language of the largest minority in Latvia and English is widely used. There are several challenges of building a tweet collection that adequately represents language use in the country.
+
+Building a monolingual Latvian collection can be done by harvesting tweets that contain indicative Latvian words which do not present in other languages, similarly how it is done for Dutch \cite{sang2013}. However, such an approach does not fit for Russian tweets because tweets that originate from Russia will inevitably collected. It is the same for English, where tweets from all around the world will be collected. For the same reason the TREC-like collection building approach \todo{citation} of filtering the publicly available stream of tweets by language does not work.
+
+Geo-location based collection produces good results \cite{milajevs:2017:BUCC}, but a large number of tweets is not geo-located which makes retrieval incomplete, but most representative.
+%
+Tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective but more based than the geo-located approach.
+
+
+\bibliographystyle{unsrtnat}
+\bibliography{references,dmilajevs_publications}
 
 \end{document}
