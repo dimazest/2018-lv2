@@ -8,6 +8,7 @@ with _ as (
     (features#>>'{user_info,screen_name_id}')::bigint screen_name_id,
     features#>>'{languages,0}' lang
   from lv2_rehydrated_tweets
+  where features#>>'{filter,source}' not like '%Foursquare%'
 ),
 __ as (
   select
