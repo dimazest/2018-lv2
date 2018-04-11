@@ -24,7 +24,7 @@ __ as (
 )
 select row_number() over () rnum, *
 from __
-where total >= 50
+where total >= 100
 ;
 
 commit;
