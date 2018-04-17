@@ -27,6 +27,8 @@ from __
 where total >= 100
 ;
 
+create index on lv2_lang_usage (screen_name_id);
+
 commit;
 
 \copy (select rnum, lv, ru, en, total from lv2_lang_usage) to stdin with csv header
