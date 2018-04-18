@@ -61,6 +61,9 @@ Corpus Linguistics \sep Latvian \sep Russian \sep English
 
 This paper presents a multilingual, location-anchored corpus of tweets from Latvia. The main challenge of collecting a socially representative corpus from the country is that several languages are used there: Latvian, the main communication language, Russian, the language of the largest minority in Latvia, and English.
 
+%%%%%%%%%
+% Problem
+%%%%%%%%%
 %There are several challenges of building a tweet collection that adequately represents language use in the country.
 %
 Building a monolingual Latvian collection could be done by harvesting tweets that contain indicative Latvian words which do not present in other languages, similarly how it is done for Dutch \cite{sang2013}. However, such an approach is not suitable for Russian tweets, because tweets that originate from Russia and other countries would inevitably be collected, and English, because of the same issue, but on a much larger scale.
@@ -70,6 +73,19 @@ For the same reason, a TREC-like collection building approach \cite{lin2016overv
 A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective but might lead to a biased collection if the list is not diverse. Also, tracking personal accounts is problematic because of privacy concerns.
 %
 A geo-location based collection procedure produces representative results \cite{milajevs:2017:BUCC}. It is not biased linguistically because it is based neither on a list of keywords nor on a list of users. Unfortunately, a large number of tweets is not geo-located, which makes retrieval incomplete.
+
+%%%%%%%%%%
+% Solution
+%%%%%%%%%%
+To keep a balance between completeness and objectivity, this work applies a hybrid approach by combining a geo-location based collection procedure with tracking a curated list of users. To minimize privacy issues, only accounts of major local newspapers, government, sport clubs, and businesses are tracked. The list is made to cover a broad variety of entities in order to produce an unbiased collection. Moreover, if a popular entity is skipped, the tweets produced by it should be included by the geo-location, based method because of retweets, and it will be mentioned by other people.
+
+%%%%%%%%%
+% Results
+%%%%%%%%%
+
+%%%%%%%%%%%%%
+% So, what...
+%%%%%%%%%%%%%
 
 \bibliographystyle{unsrtnat}
 \bibliography{references,dmilajevs_publications}
