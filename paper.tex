@@ -59,14 +59,17 @@ Corpus Linguistics \sep Latvian \sep Russian \sep English
 
 \section*{Introduction}
 
-The paper present a multilingual, location-anchored corpus of tweets from Latvia. A difficulty of collecting a socially representative corpus from the country is that several languages are used there: Latvian is the main communication language, Russian is the language of the largest minority in Latvia and English is widely used. There are several challenges of building a tweet collection that adequately represents language use in the country.
+This paper presents a multilingual, location-anchored corpus of tweets from Latvia. The main challenge of collecting a socially representative corpus from the country is that several languages are used there: Latvian, the main communication language, Russian, the language of the largest minority in Latvia, and English.
 
-Building a monolingual Latvian collection can be done by harvesting tweets that contain indicative Latvian words which do not present in other languages, similarly how it is done for Dutch \cite{sang2013}. However, such an approach does not fit for Russian tweets because tweets that originate from Russia will inevitably collected. It is the same for English, where tweets from all around the world will be collected. For the same reason the TREC-like collection building approach \todo{citation} of filtering the publicly available stream of tweets by language does not work.
-
-Geo-location based collection produces good results \cite{milajevs:2017:BUCC}, but a large number of tweets is not geo-located which makes retrieval incomplete, but most representative.
+%There are several challenges of building a tweet collection that adequately represents language use in the country.
 %
-Tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective but more based than the geo-located approach.
-
+Building a monolingual Latvian collection could be done by harvesting tweets that contain indicative Latvian words which do not present in other languages, similarly how it is done for Dutch \cite{sang2013}. However, such an approach is not suitable for Russian tweets, because tweets that originate from Russia and other countries would inevitably be collected, and English, because of the same issue, but on a much larger scale.
+%
+For the same reason, a TREC-like collection building approach \cite{lin2016overview} of filtering the publicly available stream of tweets by language would not work.
+%
+A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective but might lead to a biased collection if the list is not diverse. Also, tracking personal accounts is problematic because of privacy concerns.
+%
+A geo-location based collection procedure produces representative results \cite{milajevs:2017:BUCC}. It is not biased linguistically because it is based neither on a list of keywords nor on a list of users. Unfortunately, a large number of tweets is not geo-located, which makes retrieval incomplete.
 
 \bibliographystyle{unsrtnat}
 \bibliography{references,dmilajevs_publications}
