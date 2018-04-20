@@ -24,7 +24,7 @@ __ as (
 )
 select row_number() over () rnum, *
 from __
-where total >= 100
+where total >= 20
 ;
 
 create index on lv2_lang_usage (screen_name_id);
