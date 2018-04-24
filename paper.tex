@@ -2,6 +2,9 @@
 
 \usepackage[square,numbers,sort]{natbib}
 
+\usepackage{booktabs}
+\usepackage{multirow}
+
 \usepackage{color}
 \usepackage[pdfusetitle]{hyperref}
 % http://colorschemedesigner.com/#4o42FfqublRMS
@@ -71,7 +74,7 @@ Building a monolingual Latvian collection could be done by harvesting tweets tha
 %
 For the same reason, a TREC-like collection building approach \cite{lin2016overview} of filtering the publicly available stream of tweets by language would not work.
 %
-A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as tracking personal accounts might problematic due to privacy concerns.
+A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as tracking personal accounts might be problematic due to privacy concerns.
 %
 A geo-location based collection produces representative results \cite{milajevs:2017:BUCC}. It is not biased linguistically because it is not based on a list of keywords. It is not biased thematically because it is not based on a list of users. However, a large number of tweets is not geo-located, which makes retrieval incomplete.
 
@@ -101,7 +104,15 @@ The \texttt{locations} parameter was set to the bounding box of Riga, the capita
 %
 In addition to the location, \hl{420} accounts were tracked. \hl{The whole list of screen names together with user ID is available in the supplement.}
 
-To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet data was redownloaded (or rehydrated) to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that come from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,133\,812} tweets that formed the final collection presented here.
+To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet data was redownloaded (or rehydrated) to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,133\,812} tweets that formed the final collection presented here.
+
+\section{GLobal analysis}
+\label{sec:global-analysis}
+
+\input{figures/rehydrated_tweets_source_counts.tex}
+
+On average, about \hl{3\,000} tweets were collected per day, which is more than \hl{1\,500} by the geo-location based technique in \cite{milajevs:2017:BUCC}.
+
 
 \bibliographystyle{unsrtnat}
 \bibliography{references,dmilajevs_publications}

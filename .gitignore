@@ -37,3 +37,5 @@ auto/
 
 supplement.zip
 supplement/tweets.jsonl
+supplement/.ipynb_checkpoints/notebook-checkpoint.ipynb
+paper.pdf
