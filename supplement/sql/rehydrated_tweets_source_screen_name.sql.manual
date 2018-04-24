@@ -1,0 +1,29 @@
+with _ as (
+  select
+    regexp_replace(features#>>'{filter,source}', E'<[^>]+>', '', 'gi') source,
+    features#>>'{user_info,screen_name}' screen_name_id
+  from lv2_rehydrated_tweets
+),
+__ as (
+  select
+    distinct on (source, screen_name_id)
+    source, screen_name_id,
+    count(*) over w screen_name_count,
+    count(*) over (partition by source order by source) source_count
+  from _
+  window w as (partition by source, screen_name_id order by source, screen_name_id)
+),
+___ as (
+  select
+    source, screen_name_id, source_count, screen_name_count,
+    rank() over (partition by source order by source, screen_name_count desc, screen_name_id)
+  from __
+)
+select *
+from ___
+where rank < 4
+order by source_count desc, source, rank
+limit 30
+;
+
+--\copy (select * from result) to stdin with csv header

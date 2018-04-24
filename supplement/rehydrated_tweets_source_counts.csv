@@ -1,29 +1,29 @@
-source,total_count,total_share,lang,source_lang_count,source_count,tracked_source_lang_count,tracked_source_count,source_lang_share,other_lang_count,other_lang_share,tracked_source_share,tracked_source_lang_share
-"<a href=""http://twitter.com"" rel=""nofollow"">Twitter Web Client</a>",409397,  34.4%,en,33577,386440,9280,212874,   8.2%,22957,   5.6%,  52.0%,  27.6%
-"<a href=""http://twitter.com"" rel=""nofollow"">Twitter Web Client</a>",409397,  34.4%,lv,341023,386440,200701,212874,  83.3%,22957,   5.6%,  52.0%,  58.9%
-"<a href=""http://twitter.com"" rel=""nofollow"">Twitter Web Client</a>",409397,  34.4%,ru,11840,386440,2893,212874,   2.9%,22957,   5.6%,  52.0%,  24.4%
-"<a href=""http://twitter.com/download/android"" rel=""nofollow"">Twitter for Android</a>",195537,  16.4%,en,28775,181641,1876,16538,  14.7%,13896,   7.1%,   8.5%,   6.5%
-"<a href=""http://twitter.com/download/android"" rel=""nofollow"">Twitter for Android</a>",195537,  16.4%,lv,132368,181641,14631,16538,  67.7%,13896,   7.1%,   8.5%,  11.1%
-"<a href=""http://twitter.com/download/android"" rel=""nofollow"">Twitter for Android</a>",195537,  16.4%,ru,20498,181641,31,16538,  10.5%,13896,   7.1%,   8.5%,   0.2%
-"<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>",177404,  14.9%,en,27182,162322,2211,24213,  15.3%,15082,   8.5%,  13.6%,   8.1%
-"<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>",177404,  14.9%,lv,105303,162322,21883,24213,  59.4%,15082,   8.5%,  13.6%,  20.8%
-"<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>",177404,  14.9%,ru,29837,162322,119,24213,  16.8%,15082,   8.5%,  13.6%,   0.4%
-"<a href=""https://about.twitter.com/products/tweetdeck"" rel=""nofollow"">TweetDeck</a>",91906,   7.7%,en,1251,91416,642,84210,   1.4%,490,   0.5%,  91.6%,  51.3%
-"<a href=""https://about.twitter.com/products/tweetdeck"" rel=""nofollow"">TweetDeck</a>",91906,   7.7%,lv,90099,91416,83533,84210,  98.0%,490,   0.5%,  91.6%,  92.7%
-"<a href=""https://about.twitter.com/products/tweetdeck"" rel=""nofollow"">TweetDeck</a>",91906,   7.7%,ru,66,91416,35,84210,   0.1%,490,   0.5%,  91.6%,  53.0%
-"<a href=""http://www.tvnet.lv"" rel=""nofollow"">TVNET Login</a>",48938,   4.1%,en,15,48380,15,47334,   0.0%,558,   1.1%,  96.7%, 100.0%
-"<a href=""http://www.tvnet.lv"" rel=""nofollow"">TVNET Login</a>",48938,   4.1%,lv,22681,48380,21635,47334,  46.3%,558,   1.1%,  96.7%,  95.4%
-"<a href=""http://www.tvnet.lv"" rel=""nofollow"">TVNET Login</a>",48938,   4.1%,ru,25684,48380,25684,47334,  52.5%,558,   1.1%,  96.7%, 100.0%
-"<a href=""https://dlvrit.com/"" rel=""nofollow"">dlvr.it</a>",39193,   3.3%,en,117,38953,15,38553,   0.3%,240,   0.6%,  98.4%,  12.8%
-"<a href=""https://dlvrit.com/"" rel=""nofollow"">dlvr.it</a>",39193,   3.3%,lv,38713,38953,38538,38553,  98.8%,240,   0.6%,  98.4%,  99.5%
-"<a href=""https://dlvrit.com/"" rel=""nofollow"">dlvr.it</a>",39193,   3.3%,ru,123,38953,0,38553,   0.3%,240,   0.6%,  98.4%,   0.0%
-"<a href=""http://www.facebook.com/twitter"" rel=""nofollow"">Facebook</a>",31166,   2.6%,en,424,30034,407,29645,   1.4%,1132,   3.6%,  95.1%,  96.0%
-"<a href=""http://www.facebook.com/twitter"" rel=""nofollow"">Facebook</a>",31166,   2.6%,lv,11899,30034,11529,29645,  38.2%,1132,   3.6%,  95.1%,  96.9%
-"<a href=""http://www.facebook.com/twitter"" rel=""nofollow"">Facebook</a>",31166,   2.6%,ru,17711,30034,17709,29645,  56.8%,1132,   3.6%,  95.1%, 100.0%
-"<a href=""http://foursquare.com"" rel=""nofollow"">Foursquare</a>",29121,   2.4%,en,1999,25071,0,0,   6.9%,4050,  13.9%,   0.0%,   0.0%
-"<a href=""http://foursquare.com"" rel=""nofollow"">Foursquare</a>",29121,   2.4%,lv,22864,25071,0,0,  78.5%,4050,  13.9%,   0.0%,   0.0%
-"<a href=""http://foursquare.com"" rel=""nofollow"">Foursquare</a>",29121,   2.4%,ru,208,25071,0,0,   0.7%,4050,  13.9%,   0.0%,   0.0%
-"<a href=""http://instagram.com"" rel=""nofollow"">Instagram</a>",23082,   1.9%,en,7606,18211,8,420,  33.0%,4871,  21.1%,   1.8%,   0.1%
-"<a href=""http://instagram.com"" rel=""nofollow"">Instagram</a>",23082,   1.9%,lv,8362,18211,411,420,  36.2%,4871,  21.1%,   1.8%,   4.9%
-"<a href=""http://instagram.com"" rel=""nofollow"">Instagram</a>",23082,   1.9%,ru,2243,18211,1,420,   9.7%,4871,  21.1%,   1.8%,   0.0%
-"<a href=""http://skaties.lv"" rel=""nofollow"">SKATIES</a>",19015,   1.6%,lv,19003,19003,18677,18677,  99.9%,12,   0.1%,  98.2%,  98.3%
+source_pretty,total_count,total_share,lang,source_lang_count,source_count,tracked_source_lang_count,tracked_source_count,source_lang_share,other_lang_count,other_lang_share,tracked_source_share,tracked_source_lang_share
+Twitter Web Client,409397,  34.4%,en,33577,386440,9280,212874,   8.2%,22957,   5.6%,  52.0%,  27.6%
+Twitter Web Client,409397,  34.4%,lv,341023,386440,200701,212874,  83.3%,22957,   5.6%,  52.0%,  58.9%
+Twitter Web Client,409397,  34.4%,ru,11840,386440,2893,212874,   2.9%,22957,   5.6%,  52.0%,  24.4%
+Twitter for Android,195537,  16.4%,en,28775,181641,1876,16538,  14.7%,13896,   7.1%,   8.5%,   6.5%
+Twitter for Android,195537,  16.4%,lv,132368,181641,14631,16538,  67.7%,13896,   7.1%,   8.5%,  11.1%
+Twitter for Android,195537,  16.4%,ru,20498,181641,31,16538,  10.5%,13896,   7.1%,   8.5%,   0.2%
+Twitter for iPhone,177404,  14.9%,en,27182,162322,2211,24213,  15.3%,15082,   8.5%,  13.6%,   8.1%
+Twitter for iPhone,177404,  14.9%,lv,105303,162322,21883,24213,  59.4%,15082,   8.5%,  13.6%,  20.8%
+Twitter for iPhone,177404,  14.9%,ru,29837,162322,119,24213,  16.8%,15082,   8.5%,  13.6%,   0.4%
+TweetDeck,91906,   7.7%,en,1251,91416,642,84210,   1.4%,490,   0.5%,  91.6%,  51.3%
+TweetDeck,91906,   7.7%,lv,90099,91416,83533,84210,  98.0%,490,   0.5%,  91.6%,  92.7%
+TweetDeck,91906,   7.7%,ru,66,91416,35,84210,   0.1%,490,   0.5%,  91.6%,  53.0%
+TVNET Login,48938,   4.1%,en,15,48380,15,47334,   0.0%,558,   1.1%,  96.7%, 100.0%
+TVNET Login,48938,   4.1%,lv,22681,48380,21635,47334,  46.3%,558,   1.1%,  96.7%,  95.4%
+TVNET Login,48938,   4.1%,ru,25684,48380,25684,47334,  52.5%,558,   1.1%,  96.7%, 100.0%
+dlvr.it,39193,   3.3%,en,117,38953,15,38553,   0.3%,240,   0.6%,  98.4%,  12.8%
+dlvr.it,39193,   3.3%,lv,38713,38953,38538,38553,  98.8%,240,   0.6%,  98.4%,  99.5%
+dlvr.it,39193,   3.3%,ru,123,38953,0,38553,   0.3%,240,   0.6%,  98.4%,   0.0%
+Facebook,31166,   2.6%,en,424,30034,407,29645,   1.4%,1132,   3.6%,  95.1%,  96.0%
+Facebook,31166,   2.6%,lv,11899,30034,11529,29645,  38.2%,1132,   3.6%,  95.1%,  96.9%
+Facebook,31166,   2.6%,ru,17711,30034,17709,29645,  56.8%,1132,   3.6%,  95.1%, 100.0%
+Foursquare,29121,   2.4%,en,1999,25071,0,0,   6.9%,4050,  13.9%,   0.0%,   0.0%
+Foursquare,29121,   2.4%,lv,22864,25071,0,0,  78.5%,4050,  13.9%,   0.0%,   0.0%
+Foursquare,29121,   2.4%,ru,208,25071,0,0,   0.7%,4050,  13.9%,   0.0%,   0.0%
+Instagram,23082,   1.9%,en,7606,18211,8,420,  33.0%,4871,  21.1%,   1.8%,   0.1%
+Instagram,23082,   1.9%,lv,8362,18211,411,420,  36.2%,4871,  21.1%,   1.8%,   4.9%
+Instagram,23082,   1.9%,ru,2243,18211,1,420,   9.7%,4871,  21.1%,   1.8%,   0.0%
+SKATIES,19015,   1.6%,lv,19003,19003,18677,18677,  99.9%,12,   0.1%,  98.2%,  98.3%

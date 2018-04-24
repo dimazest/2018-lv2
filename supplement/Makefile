@@ -1,4 +1,4 @@
-PSQL = psql -d twitter -eXq
+PSQL = psql -d twitter -eXq -v ON_ERROR_STOP=1
 
 default: queries counts.txt account_counts.txt
 

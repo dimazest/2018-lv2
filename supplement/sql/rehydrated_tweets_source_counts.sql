@@ -1,5 +1,6 @@
 select
   features#>>'{filter,source}' source,
+  regexp_replace(features#>>'{filter,source}', E'<[^>]+>', '', 'gi') source_pretty,
   count(*) tweet_count,
   to_char(100.0 * count(*) / (select count(*) from lv2_rehydrated_tweets where collection = 'lv2'), '990D0%') as share 
 into temporary table top_sources
@@ -20,8 +21,8 @@ right join top_sources s on t.features#>>'{filter,source}' = s.source
 where t.collection = 'lv2'
 ;
 
-select distinct on (tweet_count, source, lang)
-  source, tweet_count total_count, share total_share, lang,
+select distinct on (tweet_count, source_pretty, lang)
+  source_pretty, tweet_count total_count, share total_share, lang,
   count(*) over source_lang source_lang_count,
   count(*) over source source_count,
   count(nullif(is_tracked, false)) over source_lang tracked_source_lang_count,
@@ -43,7 +44,7 @@ select
   to_char(100.0 * tracked_source_lang_count / source_lang_count, '990D0%') tracked_source_lang_share
 into temporary table result
 from __
-order by total_count desc, source, lang
+order by total_count desc, source_pretty, lang
 ;
 
 \copy (select * from result) to stdout with csv header
