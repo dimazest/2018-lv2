@@ -60,20 +60,20 @@ Corpus Linguistics \sep Latvian \sep Russian \sep English
 
 \section*{Introduction}
 
-This paper presents a multilingual, location-anchored corpus of tweets from Latvia. The main challenge of collecting a socially representative corpus from the country is that several languages are used there: Latvian, the main communication language, Russian, the language of the largest minority in Latvia, and English.
+This paper presents a multilingual, location-anchored corpus of tweets from Latvia. The main challenge of collecting a socially representative corpus from this country is that several languages are used there: Latvian, the main communication language, Russian, the language of the largest minority in Latvia, and English.
 
 %%%%%%%%%
 % Problem
 %%%%%%%%%
 %There are several challenges of building a tweet collection that adequately represents language use in the country.
 %
-Building a monolingual Latvian collection could be done by harvesting tweets that contain indicative Latvian words which do not present in other languages, similarly how it is done for Dutch \cite{sang2013}. However, such an approach is not suitable for tweets in Russian and English, as these languages are widely used outside of Latvia.
+Building a monolingual Latvian collection could be done by harvesting tweets that contain indicative Latvian words which do not present in other languages, similarly to how it is done for Dutch \cite{sang2013}. However, such an approach is not suitable for tweets in Russian and English, as these languages are widely used outside of Latvia.
 %
 For the same reason, a TREC-like collection building approach \cite{lin2016overview} of filtering the publicly available stream of tweets by language would not work.
 %
-A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective but might lead to a biased collection if the list is not diverse. Also, tracking personal accounts is problematic because of privacy concerns.
+A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as tracking personal accounts might problematic due to privacy concerns.
 %
-A geo-location based collection procedure produces representative results \cite{milajevs:2017:BUCC}. It is not biased linguistically because it is based neither on a list of keywords nor on a list of users. Unfortunately, a large number of tweets is not geo-located, which makes retrieval incomplete.
+A geo-location based collection produces representative results \cite{milajevs:2017:BUCC}. It is not biased linguistically because it is not based on a list of keywords. It is not biased thematically because it is not based on a list of users. However, a large number of tweets is not geo-located, which makes retrieval incomplete.
 
 %%%%%%%%
 % Method
@@ -91,7 +91,7 @@ To keep a balance between privacy and objectivity maximizing completeness, this 
 \section{Data collection}
 \label{sec:data-collection}
 
-Over the period from 15 April 2017 to \hl{19 April 2018} the initial set of \hl{1\,685\,048} tweets were collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API.\footnotemark{}
+Over the period from 15 April 2017 to \hl{19 April 2018} the initial set of \hl{1\,685\,048} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API.\footnotemark{}
 %
 \footnotetext{\url{https://developer.twitter.com/en/docs/tweets/filter-realtime/api-reference/post-statuses-filter}}
 %
@@ -101,7 +101,7 @@ The \texttt{locations} parameter was set to the bounding box of Riga, the capita
 %
 In addition to the location, \hl{420} accounts were tracked. \hl{The whole list of screen names together with user ID is available in the supplement.}
 
-To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet data was redownloaded (or rehydrated) to get rid of deleted tweets. In addition to that, the tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that come from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,133\,812} tweets that formed the final collection presented here.
+To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet data was redownloaded (or rehydrated) to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that come from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,133\,812} tweets that formed the final collection presented here.
 
 \bibliographystyle{unsrtnat}
 \bibliography{references,dmilajevs_publications}
