@@ -12,6 +12,7 @@ where
 and hydrated_at = (select max(hydrated_at) from tweet where collection = 'lv2')
 and created_at >= '2017-04-15'
 and not features->'country_codes' ? 'SE'
+order by tweet_id
 ;
 
 create index on lv2_rehydrated_tweets (tweet_id) where collection = 'lv2';
