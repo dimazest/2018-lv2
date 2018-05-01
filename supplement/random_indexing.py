@@ -11,7 +11,7 @@ class Features:
 
         self.features = {l: i for i, l in enumerate(features)}
         
-        self.labels = np.ones((len(self.features), self.D))
+        self.labels = np.ones((len(self.features), self.D), dtype=np.int16)
         self.labels[:, :self.D // 2] = -1
         
         for i in range(len(self.labels)):
