@@ -1,5 +1,7 @@
 \documentclass{IOS-Book-Article}
 
+\usepackage{graphicx}
+
 \usepackage[square,numbers,sort]{natbib}
 
 \usepackage{booktabs}
@@ -109,7 +111,7 @@ In addition to the location, \hl{420} accounts were tracked. \hl{The whole list 
 
 To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet data was redownloaded (or rehydrated) to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,133\,812} tweets that formed the final collection presented here.
 
-\section{Global analysis}
+\section{Twitter users}
 \label{sec:global-analysis}
 
 \input{figures/rehydrated_tweets_source_counts.tex}
@@ -121,7 +123,7 @@ The twitter web client is used by both: the general public and media companies. 
 
 Notably, for mobile clients, the majority of tweets comes from the general public, because they are either geo-located or mention a tracked account. The number of tweets coming from tracked accounts, \hl{that are mostly media}, is lower for Android \hl{(8.5\%)} than for iPhone \hl{(13.5\%)}. The difference can be explained by the fact, that all top 5 Android users are personal accounts, while for iPhone there are only 2 personal accounts in the top 5. \sn{TV3zinas}, a news account of a TV channel, tweets the most from iPhone. \sn{Lattelecom}, a telecommunication company, is the second most active iPhone user. \sn{AstrologiLv} writes about astrology and is the fourth most active iPhone user. All three accounts tweet exclusively in Latvian and were tracked during corpus collection.
 
-Client applications that produce tweets mostly from tracked accounts are used by the media. For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are tracked media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not tracked and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities that was not tracked.
+Client applications that produce tweets mostly from tracked accounts are used by the media. For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are tracked media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not tracked and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not tracked.
 
 TweetDeck is used by \sn{DelfiLV}, a major media portal, \sn{LV\_Portals}, an account run by the official government gazette of the Republic of Latvia, \sn{lsmlv}, an account of a publicly funded radio and television organization (LSM), \sn{ltvzinas}, the news account of Latvian Television, \sn{RietumuRadio}, a radio station. 
 
@@ -131,11 +133,30 @@ The tweet delivery service \texttt{dlvr.it} is used by the newspaper \sn{nralv} 
 
 SKATIES delivers video content from several sources. The most active accounts are \sn{skatieslatvija}, \sn{lnt\_lv}, \sn{tv3lv}, \sn{BezTabuTV3} and \sn{TV3Zinas}.
 
-Some tweets come from social media networks. Facebook content mostly comes from tracked media accounts. The top 5 most active users are: \sn{mixnews\_lv}, the Russian edition of a media portal, \sn{Otkrito}, also the Russian edition of \sn{JaunsLV}, \sn{labdienlv}, \sn{ekonimikalv} and \sn{nozare}, all three belonging to one Latvian media portal. The fact that Russian accounts are not active among other clients might suggest that Russian content is not spread via Twitter, but, for example, via Facebook.
+Some tweets come from social media networks. Facebook content mostly comes from tracked media accounts. The top 5 most active users are: \sn{mixnews\_lv}, the Russian edition of a media portal, \sn{Otkrito}, also the Russian edition of \sn{JaunsLV}, \sn{labdienlv}, \sn{ekonimikalv} and \sn{nozare}, all three belonging to one Latvian media portal. The fact that Russian accounts are not active among other clients might suggest that Russian content is not spread via Twitter, but via Facebook.
 
 The content that comes form Foursquare and Instagram is created by the general public.
 
 There is a clear pattern that mobile clients are used by personal accounts, while media companies set up a special solution to deliver tweets, probably, integrating it with their content delivery systems or simply using a web client from an office machine.
+
+\section{Language}
+\label{sec:language}
+
+Latvian is the dominant language: \hl{880\,351 (74\%)} tweets are written in it.\footnotemark{} There are \hl{12\,505 (11\%)} tweets in Russian, \hl{116203 (10\%)} in English and \hl{66\,969 (6\%)} in other languages. Figure~\ref{fig:rehydrated-tweets-count-by-day} shows the tweet volume over time.
+
+Latvian dominates almost in every client application. Tweets coming from Foursquare are labeled as Latvian in \hl{78\%} cases (see Table~\ref{tab:source_counts}), that might be due to Latvian location names.
+
+Russian tweets constitute of more then half tweets coming from TVNET, where its share is \hl{52\%} while Latvian is \hl{46.3\%}, and from Facebook, where the two most active users are Russian madia.
+
+A lot of English content is coming form Instagram (\hl{32.9\%}), that might be due to the dominance of hashtags over other text. Also, there are many tweets labeled as written in other languages that come from Foursquare and Instagram. As Instagram posts are more likely to contain hashtags and Foursqure tweets contain location names, tweets should not be assigned a single language label, but instead be labeled as written in several languages.
+
+
+\footnotetext{Twitter labels tweets with the language they are written in.}
+
+
+
+
+\input{figures/rehydrated_tweets_count_by_day.tex}
 
 \bibliographystyle{unsrtnat}
 \bibliography{references,dmilajevs_publications}
