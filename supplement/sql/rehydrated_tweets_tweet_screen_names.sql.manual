@@ -1,0 +1,7 @@
+select tweet_id, screen_name
+into temporary table result
+from lv2_rehydrated_tweets, jsonb_array_elements_text(features->'screen_names') screen_name
+order by tweet_id, screen_name
+;
+
+\copy (select * from result) to stdin with csv header

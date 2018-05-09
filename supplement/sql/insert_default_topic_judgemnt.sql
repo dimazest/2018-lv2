@@ -12,6 +12,7 @@ select
   true from_dev
 from tweet
 where collection = 'lv2' and (features->'screen_names' ? :'SCREEN_NAME' or features->'user_mentions' ? :'SCREEN_NAME')
+order by collection, eval_topic_rts_id, tweet_id
 ;
 
 insert into eval_relevance_judgment

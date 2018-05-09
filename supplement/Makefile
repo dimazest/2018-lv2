@@ -1,6 +1,6 @@
-PSQL = psql -d twitter -eXq -v ON_ERROR_STOP=1
+PSQL = psql -d twitter -Xq -v ON_ERROR_STOP=1
 
-default: queries counts.txt account_counts.txt
+default: queries jsonl_queries counts.txt account_counts.txt
 
 sql/rehydrated_tweets.sql: sql/collected_tweets.sql
 sql/rehydrated_tweets_*.sql: sql/rehydrated_tweets.sql
@@ -18,14 +18,17 @@ relevance_judgments_lang_pref_by_day.csv: rehydrated_tweets_lang_usage.csv
 %.csv: sql/%.sql
 	${PSQL} -f $< -o $@
 
+%.jsonl: sql/%.sql.jsonl
+	${PSQL} -f $< | sed -e 's/\\\\/\\/g' > $@
 
 queries: $(patsubst sql/%.sql,%.csv,$(wildcard sql/*.sql))
+jsonl_queries: $(patsubst sql/%.sql.jsonl,%.jsonl,$(wildcard sql/*.sql.jsonl))
 
 counts.txt: collected_tweets.csv rehydrated_tweets.csv
 	wc -l $^ > $@
 account_counts.txt: lv.cfg
 	grep -e '^@' $< | wc -l > $@
 
-.PHONY: queries default
+.PHONY: queries default jsonl_queries
 
 

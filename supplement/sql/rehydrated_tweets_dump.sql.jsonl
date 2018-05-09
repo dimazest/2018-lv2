@@ -1,0 +1,32 @@
+with _ as (
+  select
+    tweet_id,
+    (features#>>'{user_info,screen_name_id}')::bigint screen_name_id,
+    text,
+    (features#>>'{languages,0}') "language",
+    (features#>'{screen_names}') screen_names,
+    (features#>'{hashtags}') hashtags,
+    jsonb_array_length(features->'retweeted_status__id') is_retweet
+  from lv2_rehydrated_tweets t
+),
+__ as (
+  select
+    tweet_id,
+    text,
+    "language",
+    case when jsonb_array_length(screen_names) = 1 then to_jsonb(array_to_json(array[rnum]))
+         else screen_names
+    end,
+    hashtags,
+    is_retweet
+  from _
+  join lv2_lang_usage u using (screen_name_id)
+)
+select row_to_json(__)
+into temporary table result
+from __
+order by tweet_id
+;
+
+\set ECHO none
+\copy (select * from result) to stdout 

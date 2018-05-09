@@ -21,9 +21,9 @@ ___ as (
 )
 select *
 from ___
-where rank < 4
+where rank <= 5
 order by source_count desc, source, rank
-limit 30
+limit 50
 ;
 
 --\copy (select * from result) to stdin with csv header
