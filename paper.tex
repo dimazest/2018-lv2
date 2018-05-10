@@ -107,7 +107,7 @@ The \texttt{locations} parameter was set to the bounding box of Riga, the capita
 %
 \footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 %
-In addition to the location, \hl{420} accounts were tracked. \hl{The whole list of screen names together with user ID is available in the supplement.}
+In addition to the location, \hl{420} accounts were tracked. %\hl{The whole list of screen names together with user ID is available in the supplement.}
 
 To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet data was redownloaded (or rehydrated) to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,133\,812} tweets that formed the final collection presented here.
 
@@ -119,7 +119,6 @@ To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet 
 On average, about \hl{3\,200} tweets were collected per day, which is more than \hl{1\,500} by the geo-location based technique in \cite{milajevs:2017:BUCC}. Most of the tweets came from the official Twitter clients for Web, Android or iPhone. Together these clients contributed more than 60\% of all collected tweets, refer to Table~\ref{tab:source_counts} for more details.
 
 The twitter web client is used by both: the general public and media companies. The top 5 of most active accounts consists only of tracked Latvian media accounts: \sn{DienaLV}, a newspaper, \sn{LA\_lv}, another newspaper, \sn{JaunsLV}, a media portal, \sn{TV3\_Play}, a TV channel, and \sn{dblv}, a newspaper.
-
 
 Notably, for mobile clients, the majority of tweets comes from the general public, because they are either geo-located or mention a tracked account. The number of tweets coming from tracked accounts, \hl{that are mostly media}, is lower for Android \hl{(8.5\%)} than for iPhone \hl{(13.5\%)}. The difference can be explained by the fact, that all top 5 Android users are personal accounts, while for iPhone there are only 2 personal accounts in the top 5. \sn{TV3zinas}, a news account of a TV channel, tweets the most from iPhone. \sn{Lattelecom}, a telecommunication company, is the second most active iPhone user. \sn{AstrologiLv} writes about astrology and is the fourth most active iPhone user. All three accounts tweet exclusively in Latvian and were tracked during corpus collection.
 
@@ -160,20 +159,44 @@ A lot of English content is coming form Instagram (\hl{32.9\%}), that might be d
 
 To investigate the collection further nine topics of interests were defined. The collection was manually searched using keywords to get relevant tweets. The topics are:
 \begin{itemize}
-\item \texttt{LV001: Winter} Everything about winter. The relevant tweets are mostly about the weather, the pictures of snow and driving conditions.
+\item \texttt{LV001: Winter} Everything about winter.
 \item \texttt{LV002: Mel\=anijas hronika} Mel\=anijas hronika is a Latvian movie that was selected for Foreign-Language Category for Oscars.
 \item \texttt{LV003: Refugees} A broad topic about refugee crisis in Europe, attitude to immigration and immigrants.
 \item \texttt{LV004: Dv\=eese\c{l}u putenis} A Latvian movie that is currently in production.
-\item \texttt{LV005: Hockey} Ice hockey related tweets.
+\item \texttt{LV005: Ice hockey} Ice hockey related tweets.
 \item \texttt{LV006: Christmas} Christmas.
 \item \texttt{LV007: New Year} New Year.
 \item \texttt{LV008: Olympics} Tweets about the Olympic games and the Latvian team.
 \item \texttt{LV009: Brexit} Brexit.
 \end{itemize}
 
-Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English.
+Topics exhibit various temporal patterns, refer to Figure~\ref{fig:topic_timeline}. The volume of tweets is constant for long-lasting news stories such as the refugee crisis, Brexit and ice hockey.
+%
+During the Ice Hockey World Championship the volume of hockey related tweets increases. Similarly, event-based topics---such as Christmas, New Year and Olympics---are the most active during corresponding events, the volume of tweets slowly builds up as an event approaches.
+
+
+In case of Christmas, we see unexpected activity in March which is due to the discussion of making the Orthodox Christmas a public holiday in Parliament. This topic exhibits some cultural differences and language use. Tweets in Latvian peak during Advent and Christmas in December, tweets in Russian reach maximum both in December and early January when Orthodox Christmas are celebrated. It worth noting that during the discussion whether Orthodox Christmas should be a public holiday, it sometimes was referred as ``Russian Christmas''.
+
+Topics about movies are the smallest volume-wise. For a movie that was shown at several international festivals, we see multilingual content, while tweets about a movie that is still in production are solely monolingual.
+
+The topic about Winter is an example of a seasonal topic, which is mostly about the weather, the pictures of snow and driving conditions.
+
+Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For all topics the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}). For Russian and English these numbers are generally lower than global average.
+
+The most notable exception being Russian tweets about New Year, probably because of the content written by Russian tourists. The topic about Winter comes close for Russian with respect to the expected average, but is low for English tweets. Interestingly, for the international news topics, there is proportionally more English content about Brexit than about refugees.
 
 \input{figures/topic_lang_counts.tex}
+
+\section{Conclusion and future work}
+\label{sec:conclusion}
+
+This paper presents a multilingual tweet collection with some analysis of users, language use and content. The analysis reveal that the resource might be used in several areas ranging from computational linguistics, information retrieval and social science.
+
+As for computational linguistics, multilingual language identification needs to be applied to it, as tweets are not always monolingual, as we indirectly showed by the large volume of English tweets coming from Instagram and Latvian tweets coming from Foursquare.
+
+An evidence of the existence of reliable topics that exhibit various temporal patterns could be exploited in information retrieval either for evaluation of multilingual retrieval systems or development of collection exploration techniques.
+
+For social analysis, it would be nice to see what topics are multilingual, for example Winter, and what topics are monolingual, for example movie related topics in this work, and why the topics are discussed differently depending on a language.
 
 \input{figures/topic_timeline.tex}
 
