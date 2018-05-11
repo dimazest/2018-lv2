@@ -20,9 +20,11 @@
   urlcolor=urlcolor,
 }
 
-\usepackage{soul}
-\definecolor{hlcolor}{RGB}{255, 221, 163}
-\sethlcolor{hlcolor}
+%\usepackage{soul}
+%\definecolor{hlcolor}{RGB}{255, 221, 163}
+%\sethlcolor{hlcolor}
+\newcommand{\hl}[1]{#1}
+
 \usepackage{mathptmx}
 
 %\usepackage{times}
@@ -81,7 +83,9 @@ For the same reason, a TREC-like collection building approach \cite{lin2016overv
 %
 A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as tracking personal accounts might be problematic due to privacy concerns.
 %
-A geo-location based collection produces representative results \cite{milajevs:2017:BUCC}. It is not biased linguistically because it is not based on a list of keywords. It is not biased thematically because it is not based on a list of users. However, a large number of tweets are not geo-located, which makes retrieval incomplete.
+%A geo-location based collection produces representative results \cite{milajevs:2017:BUCC}.
+%
+An alternative approach would be to retrieve only geo-located tweets. Such a collection would neither be biased linguistically because it is not based on a list of keywords, nor it would be biased thematically because it is not based on a list of users. However, a large number of tweets are not geo-located, which makes retrieval incomplete.
 % IMS self-cite alert. What's new in this work?
 
 %%%%%%%%
@@ -91,29 +95,42 @@ To keep a balance between privacy and objectivity maximizing completeness, this 
 
 % IMS it's worth saying in one sentence how you will determine that the final collection has the properties you desire.
 
+Our base assumption is that geo-located tweets is a representative and unbiased sample of Latvian Twitter. Thus, an extended collection should exhibit similar properties as the geo-located one. The main property we are interested in this work is the language proportion. We hypothesize, that an unbiased extended collection should have similar language distribution as the initial.
+
+To study the collection in more details, we defined 9 topics and manually search for relevant tweets.
+
 %%%%%%%%%
 % Results
 %%%%%%%%%
+
+The analysis of the collection shows that it is biased toward content in Latvian: proportionally there are more tweets in Latvian than in Russian and English. Also, Latvian is more dominant language than expected in all but one topic, the exception being the topic about New Year celebration.
 
 %%%%%%%%%%%%%
 % So, what...
 %%%%%%%%%%%%%
 
+Building an unbiased collection is difficult.  In our case the main reason of introduced bias, might be that Russian and English content is less news-oriented and much more informal. In other words, while it's common to discuss current news in Latvian by engaging with media, the tweets in Russian and English might be more personal and friend-oriented.
+
 \section{Data collection}
 \label{sec:data-collection}
 
-Over the period from 15 April 2017 to \hl{19 April 2018} the initial set of \hl{1\,685\,048} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API.\footnotemark{}
+Over the period from 15 April 2017 to \hl{8 May 2018} the initial set of \hl{1\,708\,236} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API.%\footnotemark{}
 %
-\footnotetext{\url{https://developer.twitter.com/en/docs/tweets/filter-realtime/api-reference/post-statuses-filter}}
+%\footnotetext{\url{https://developer.twitter.com/en/docs/tweets/filter-realtime/api-reference/post-statuses-filter}}
 %
-The \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia.\footnotemark{}
+The \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia.%\footnotemark{}
 %
-\footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
+%\footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 %
-In addition to the location, \hl{420} accounts were tracked. %\hl{The whole list of screen names together with user ID is available in the supplement.}
+In addition to the location, 420 accounts were tracked.%\footnotemark{} %\hl{The whole list of screen names together with user ID is available in the supplement.}
+%\footnotetext{In this paper, by ``tracking users'', we mean that their user IDs where passed to the Twitter API to collect tweets that they created, or the tweets that are replies by other users to their tweets. Refer to \url{https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters\#follow} for a complete description. Keep in mind that this is different from the case when a user follows another user.}
+%
+The accounts are mostly Latvian (that is, coming from Latvia, but not necessary produce content in Latvian) news outlets, politicians, businesses, artists and sport clubs. 
+
 % IMS how did you select those accounts? Can you describe them generically here?  (i.e. "Latvian news outlets, famous actors and politicians, and a selection of Eurovision finalists.")  You should make clear you hand picked them based on background knowledge or if this list was scraped from a public resource, since it reflects effort put into making the collection.
 
-To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet data was redownloaded (or rehydrated) to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,133\,812} tweets that formed the final collection presented here.
+
+%To comply with Twitter's terms of service, on \hl{8 May 2018}, the raw tweet data was redownloaded to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,242\,943} tweets that formed the final collection presented here.
 % IMS I think "hydrate" is a jargon term that twarc invented but that isn't widely used.
 
 \section{Twitter users}
@@ -121,27 +138,27 @@ To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet 
 
 \input{figures/rehydrated_tweets_source_counts.tex}
 
-On average, about \hl{3\,200} tweets were collected per day, which is more than \hl{1\,500} by the geo-location based technique in \cite{milajevs:2017:BUCC}. Most of the tweets came from the official Twitter clients for Web, Android or iPhone. Together these clients contributed more than 60\% of all collected tweets, refer to Table~\ref{tab:source_counts} for more details.
+On average, about \hl{3\,200} tweets were collected per day, which is more than 1\,500 by the geo-location based technique in \cite{milajevs:2017:BUCC}. Most of the tweets came from the official Twitter clients for Web, Android or iPhone. Together these clients contributed more than 60\% of all collected tweets, refer to Table~\ref{tab:source_counts} for more details.
 
 The twitter web client is used by both the general public and media companies. The top 5 of most active accounts consists only of tracked Latvian media accounts: \sn{DienaLV}, a newspaper, \sn{LA\_lv}, another newspaper, \sn{JaunsLV}, a media portal, \sn{TV3\_Play}, a TV channel, and \sn{dblv}, a newspaper.
 
-Notably, for mobile clients, the majority of tweets comes from the general public, because they are either geo-located or mention a tracked account. The number of tweets coming from tracked accounts, \hl{that are mostly media}, is lower for Android \hl{(8.5\%)} than for iPhone \hl{(13.5\%)}. The difference can be explained by the fact, that all top 5 Android users are personal accounts, while for iPhone there are only 2 personal accounts in the top 5. \sn{TV3zinas}, a news account of a TV channel, tweets the most from iPhone. \sn{Lattelecom}, a telecommunication company, is the second most active iPhone user. \sn{AstrologiLv} writes about astrology and is the fourth most active iPhone user. All three accounts tweet exclusively in Latvian and were tracked during corpus collection.
+Notably, for mobile clients, the majority of tweets comes from the general public, because they are either geo-located or mention a tracked account. The number of tweets coming from tracked accounts, that are mostly media, is lower for Android \hl{(8.4\%)} than for iPhone \hl{(13.8\%)}. The difference can be explained by the fact, that all top 5 Android users are personal accounts, while for iPhone there are only 2 personal accounts in the top 5. \sn{TV3zinas}, a news account of a TV channel, tweets the most from iPhone. \sn{Lattelecom}, a telecommunication company, is the second most active iPhone user. \sn{AstrologiLv} writes about astrology and is the fourth most active iPhone user. All three accounts tweet exclusively in Latvian and were tracked during corpus collection.
 
-Client applications that produce tweets mostly from tracked accounts are used by the media. 
+%Client applications that produce tweets mostly from tracked accounts are used by the media. 
 % IMS I don't understand the previous sentence
-For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are tracked media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not tracked and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not tracked.
+%For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are tracked media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not tracked and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not tracked.
 
 % IMS terminology jumble. You are tracking, and also other users are tracking, and you selected users who were tracking (well, actually, probably retweeting) tweets from accounts you were tracking already.  You want this section to read like a recipe for your reader who wants to duplicate your effort in Swahili or whatever.
 
-TweetDeck is used by \sn{DelfiLV}, a major media portal, \sn{LV\_Portals}, an account run by the official government gazette of the Republic of Latvia, \sn{lsmlv}, an account of a publicly funded radio and television organization (LSM), \sn{ltvzinas}, the news account of Latvian Television, \sn{RietumuRadio}, a radio station. 
+%TweetDeck is used by \sn{DelfiLV}, a major media portal, \sn{LV\_Portals}, an account run by the official government gazette of the Republic of Latvia, \sn{lsmlv}, an account of a publicly funded radio and television organization (LSM), \sn{ltvzinas}, the news account of Latvian Television, \sn{RietumuRadio}, a radio station. 
 
-TVNET is a media company that controls several media portals. The most active accounts that use their application are \sn{TVnet\_portals}, \sn{RusApollo}, \sn{TVnet\_rus}, \sn{SportsTVNET}, and \sn{SejasLV}.
+%TVNET is a media company that controls several media portals. The most active accounts that use their application are \sn{TVnet\_portals}, \sn{RusApollo}, \sn{TVnet\_rus}, \sn{SportsTVNET}, and \sn{SejasLV}.
 
-The tweet delivery service \texttt{dlvr.it} is used by the newspaper \sn{nralv} and their sport portal \sn{Sportacentrs}, the photo account of the national news agency (LETA) \sn{letafoto}, \sn{Kompresori} and the sport account of Latvian Television \sn{ltvsports}.
+%The tweet delivery service \texttt{dlvr.it} is used by the newspaper \sn{nralv} and their sport portal \sn{Sportacentrs}, the photo account of the national news agency (LETA) \sn{letafoto}, \sn{Kompresori} and the sport account of Latvian Television \sn{ltvsports}.
 
-SKATIES delivers video content from several sources. The most active accounts are \sn{skatieslatvija}, \sn{lnt\_lv}, \sn{tv3lv}, \sn{BezTabuTV3} and \sn{TV3Zinas}.
+%SKATIES delivers video content from several sources. The most active accounts are \sn{skatieslatvija}, \sn{lnt\_lv}, \sn{tv3lv}, \sn{BezTabuTV3} and \sn{TV3Zinas}.
 
-Some tweets come from social media networks. Facebook content mostly comes from tracked media accounts. The top 5 most active users are: \sn{mixnews\_lv}, the Russian edition of a media portal, \sn{Otkrito}, also the Russian edition of \sn{JaunsLV}, \sn{labdienlv}, \sn{ekonimikalv} and \sn{nozare}, all three belonging to one Latvian media portal. The fact that Russian accounts are not active among other clients might suggest that Russian content is not spread via Twitter, but via Facebook.
+Some tweets come from social media networks. Facebook content mostly comes from tracked media accounts. The top 5 most active users are: \sn{mixnews\_lv}, the Russian edition of a media portal, \sn{Otkrito}, also the Russian edition of \sn{JaunsLV}, \sn{labdienlv}, \sn{ekonimikalv} and \sn{nozare}, all three belonging to one Latvian media portal. The fact that Russian accounts are not active among other clients might suggest that Russian content is not spread initially via Twitter, but is cross-posted from Facebook.
 % IMS but you said you were tracking Facebook.  I think you mean that you can only track FB when the content is also posted to Twitter, but not otherwise.
 
 The content that comes from Foursquare and Instagram is created by the general public.
@@ -155,15 +172,15 @@ There is a clear pattern that mobile clients are used by personal accounts, whil
 
 \input{figures/rehydrated_tweets_count_by_day.tex}
 
-Latvian is the dominant language: \hl{880\,351 (74\%)} tweets are written in it.\footnotemark{} There are \hl{12\,505 (11\%)} tweets in Russian, \hl{116203 (10\%)} in English and \hl{66\,969 (6\%)} in other languages. Figure~\ref{fig:rehydrated-tweets-count-by-day} shows the tweet volume over time.
+Latvian is the dominant language: \hl{917\,259 (73.8\%)} tweets are written in it.\footnotemark{} There are \hl{130\,825 (10.5\%)} tweets in Russian, \hl{122\,490 (9.9\%)} in English and \hl{72\,369\, (6.2\%)} in other languages. This distribution is very different from a geo-located method used in \cite{milajevs:2017:BUCC}, where the distribution is 44.5\% Latvian, 33.9\% Russian and 20.7\% English. Figure~\ref{fig:rehydrated-tweets-count-by-day} shows the tweet volume over time.
 
 \footnotetext{Twitter labels tweets with the language they are written in.}
 
-Latvian dominates almost in every client application. Tweets coming from Foursquare are labeled as Latvian in \hl{78\%} cases (see Table~\ref{tab:source_counts}), that might be due to Latvian location names.
+Latvian dominates almost in every client application. Tweets coming from Foursquare are labeled as Latvian in \hl{78.4\%} cases (see Table~\ref{tab:source_counts}), that might be due to Latvian location names.
 
-Russian tweets constitute of more then half tweets coming from TVNET, where its share is \hl{52\%} while Latvian is \hl{46.3\%}, and from Facebook, where the two most active users are Russian madia.
+Russian tweets constitute of more then half tweets coming from TVNET, where its share is \hl{52.8\%} while Latvian is \hl{46.1\%}, and from Facebook, where the two most active users are Russian media.
 
-A lot of English content is coming form Instagram (\hl{32.9\%}), that might be due to the dominance of hashtags over other text. Also, there are many tweets labeled as written in other languages that come from Foursquare and Instagram. As Instagram posts are more likely to contain hashtags and Foursqure tweets contain location names, tweets should not be assigned a single language label, but instead be labeled as written in several languages.
+A lot of English content is coming form Instagram (\hl{36.1\%}), that might be due to the dominance of hashtags over other text. Also, there are many tweets labeled as written in other languages that come from Foursquare and Instagram. As Instagram posts are more likely to contain hashtags and Foursqure tweets contain location names, tweets should not be assigned a single language label, but instead be labeled as written in several languages.
 
 % IMS the point of the paper is that you believe this is a more representative sample than would be obtained by simpler methods.  Why do you believe it?  Is the hypothesis falsifiable?
 
@@ -175,9 +192,10 @@ A lot of English content is coming form Instagram (\hl{32.9\%}), that might be d
 To investigate the collection further nine topics of interests were defined. The collection was manually searched using keywords to get relevant tweets. The topics are:
 \begin{itemize}
 \item \texttt{LV001: Winter} Everything about winter.
-\item \texttt{LV002: Mel\=anijas hronika} Mel\=anijas hronika is a Latvian movie that was selected for Foreign-Language Category for Oscars.
+\item \texttt{LV002: 
+The Chronicles of Melanie} Mel\=anijas hronika (The Chronicles of Melanie) is a Latvian movie that was selected for Foreign-Language Category for Oscars.
 \item \texttt{LV003: Refugees} A broad topic about refugee crisis in Europe, attitude to immigration and immigrants.
-\item \texttt{LV004: Dv\=eese\c{l}u putenis} A Latvian movie that is currently in production.
+\item \texttt{LV004: Blizzard of Souls} A Latvian movie Dv\=eese\c{l}u putenis (Blizzard of Souls) that is currently in production.
 \item \texttt{LV005: Ice hockey} Ice hockey related tweets.
 \item \texttt{LV006: Christmas} Christmas.
 \item \texttt{LV007: New Year} New Year.
@@ -190,8 +208,7 @@ Topics exhibit various temporal patterns, refer to Figure~\ref{fig:topic_timelin
 %
 During the Ice Hockey World Championship the volume of hockey related tweets increases. Similarly, event-based topics---such as Christmas, New Year and Olympics---are the most active during corresponding events, the volume of tweets slowly builds up as an event approaches.
 
-
-In case of Christmas, we see unexpected activity in March which is due to the discussion of making the Orthodox Christmas a public holiday in Parliament. This topic exhibits some cultural differences and language use. Tweets in Latvian peak during Advent and Christmas in December, tweets in Russian reach maximum both in December and early January when Orthodox Christmas are celebrated. It worth noting that during the discussion whether Orthodox Christmas should be a public holiday, it sometimes was referred as ``Russian Christmas''.
+In case of Christmas, we see unexpected activity in March which is due to the discussion of making the Orthodox Christmas a public holiday in Parliament. This topic exhibits some cultural differences and language use. Tweets in Latvian peak during Advent and Christmas in December, tweets in Russian reach maximum both in December and early January when Orthodox Christmas are celebrated. It worth noting that during the discussion whether Orthodox Christmas should be a public holiday, it sometimes was referred as ``Russian Christmas.''
 
 Topics about movies are the smallest volume-wise. For a movie that was shown at several international festivals, we see multilingual content, while tweets about a movie that is still in production are solely monolingual.
 
@@ -208,13 +225,16 @@ The most notable exception being Russian tweets about New Year, probably because
 
 % IMS The conclusion does not address any of the questions raised in the abstract/introduction.
 
-This paper presents a multilingual tweet collection with some analysis of users, language use and content. The analysis reveal that the resource might be used in several areas ranging from computational linguistics, information retrieval and social science.
-
-As for computational linguistics, multilingual language identification needs to be applied to it, as tweets are not always monolingual, as we indirectly showed by the large volume of English tweets coming from Instagram and Latvian tweets coming from Foursquare.
-
-An evidence of the existence of reliable topics that exhibit various temporal patterns could be exploited in information retrieval either for evaluation of multilingual retrieval systems or development of collection exploration techniques.
-
-For social analysis, it would be nice to see what topics are multilingual, for example Winter, and what topics are monolingual, for example movie related topics in this work, and why the topics are discussed differently depending on a language.
+This paper presents a multilingual tweet collection with some analysis of users, language use and content. The analysis reveals that geo-location and a limited list of Twitter users leads to a biased collection.
+%
+% the resource might be used in several areas ranging from computational linguistics, information retrieval and social science.
+%
+The challenges of building representative and complete tweet collection are:
+\begin{itemize}
+\item How the content of users who do not engage with media accounts (newspapers, radio stations, etc.~\ldots) might be collected respecting their privacy and not introducing bias into the collection?
+\item How to get hints of what topics are more popular among ``minorities''? What are tweets in Russian and English are about?
+\item Some tweets are multilingual. How can code-switching be detected reliably?
+\end{itemize}
 
 \input{figures/topic_timeline.tex}
 
