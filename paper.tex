@@ -81,12 +81,15 @@ For the same reason, a TREC-like collection building approach \cite{lin2016overv
 %
 A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as tracking personal accounts might be problematic due to privacy concerns.
 %
-A geo-location based collection produces representative results \cite{milajevs:2017:BUCC}. It is not biased linguistically because it is not based on a list of keywords. It is not biased thematically because it is not based on a list of users. However, a large number of tweets is not geo-located, which makes retrieval incomplete.
+A geo-location based collection produces representative results \cite{milajevs:2017:BUCC}. It is not biased linguistically because it is not based on a list of keywords. It is not biased thematically because it is not based on a list of users. However, a large number of tweets are not geo-located, which makes retrieval incomplete.
+% IMS self-cite alert. What's new in this work?
 
 %%%%%%%%
 % Method
 %%%%%%%%
 To keep a balance between privacy and objectivity maximizing completeness, this work applies a hybrid approach by combining a geo-location based collection procedure with tracking a curated list of users. To minimize privacy issues, only accounts of organizations and public figures are tracked.
+
+% IMS it's worth saying in one sentence how you will determine that the final collection has the properties you desire.
 
 %%%%%%%%%
 % Results
@@ -108,8 +111,10 @@ The \texttt{locations} parameter was set to the bounding box of Riga, the capita
 \footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 %
 In addition to the location, \hl{420} accounts were tracked. %\hl{The whole list of screen names together with user ID is available in the supplement.}
+% IMS how did you select those accounts? Can you describe them generically here?  (i.e. "Latvian news outlets, famous actors and politicians, and a selection of Eurovision finalists.")  You should make clear you hand picked them based on background knowledge or if this list was scraped from a public resource, since it reflects effort put into making the collection.
 
 To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet data was redownloaded (or rehydrated) to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,133\,812} tweets that formed the final collection presented here.
+% IMS I think "hydrate" is a jargon term that twarc invented but that isn't widely used.
 
 \section{Twitter users}
 \label{sec:global-analysis}
@@ -118,11 +123,15 @@ To comply with Twitter's terms of service, on \hl{19 April 2018}, the raw tweet 
 
 On average, about \hl{3\,200} tweets were collected per day, which is more than \hl{1\,500} by the geo-location based technique in \cite{milajevs:2017:BUCC}. Most of the tweets came from the official Twitter clients for Web, Android or iPhone. Together these clients contributed more than 60\% of all collected tweets, refer to Table~\ref{tab:source_counts} for more details.
 
-The twitter web client is used by both: the general public and media companies. The top 5 of most active accounts consists only of tracked Latvian media accounts: \sn{DienaLV}, a newspaper, \sn{LA\_lv}, another newspaper, \sn{JaunsLV}, a media portal, \sn{TV3\_Play}, a TV channel, and \sn{dblv}, a newspaper.
+The twitter web client is used by both the general public and media companies. The top 5 of most active accounts consists only of tracked Latvian media accounts: \sn{DienaLV}, a newspaper, \sn{LA\_lv}, another newspaper, \sn{JaunsLV}, a media portal, \sn{TV3\_Play}, a TV channel, and \sn{dblv}, a newspaper.
 
 Notably, for mobile clients, the majority of tweets comes from the general public, because they are either geo-located or mention a tracked account. The number of tweets coming from tracked accounts, \hl{that are mostly media}, is lower for Android \hl{(8.5\%)} than for iPhone \hl{(13.5\%)}. The difference can be explained by the fact, that all top 5 Android users are personal accounts, while for iPhone there are only 2 personal accounts in the top 5. \sn{TV3zinas}, a news account of a TV channel, tweets the most from iPhone. \sn{Lattelecom}, a telecommunication company, is the second most active iPhone user. \sn{AstrologiLv} writes about astrology and is the fourth most active iPhone user. All three accounts tweet exclusively in Latvian and were tracked during corpus collection.
 
-Client applications that produce tweets mostly from tracked accounts are used by the media. For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are tracked media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not tracked and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not tracked.
+Client applications that produce tweets mostly from tracked accounts are used by the media. 
+% IMS I don't understand the previous sentence
+For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are tracked media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not tracked and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not tracked.
+
+% IMS terminology jumble. You are tracking, and also other users are tracking, and you selected users who were tracking (well, actually, probably retweeting) tweets from accounts you were tracking already.  You want this section to read like a recipe for your reader who wants to duplicate your effort in Swahili or whatever.
 
 TweetDeck is used by \sn{DelfiLV}, a major media portal, \sn{LV\_Portals}, an account run by the official government gazette of the Republic of Latvia, \sn{lsmlv}, an account of a publicly funded radio and television organization (LSM), \sn{ltvzinas}, the news account of Latvian Television, \sn{RietumuRadio}, a radio station. 
 
@@ -133,10 +142,13 @@ The tweet delivery service \texttt{dlvr.it} is used by the newspaper \sn{nralv} 
 SKATIES delivers video content from several sources. The most active accounts are \sn{skatieslatvija}, \sn{lnt\_lv}, \sn{tv3lv}, \sn{BezTabuTV3} and \sn{TV3Zinas}.
 
 Some tweets come from social media networks. Facebook content mostly comes from tracked media accounts. The top 5 most active users are: \sn{mixnews\_lv}, the Russian edition of a media portal, \sn{Otkrito}, also the Russian edition of \sn{JaunsLV}, \sn{labdienlv}, \sn{ekonimikalv} and \sn{nozare}, all three belonging to one Latvian media portal. The fact that Russian accounts are not active among other clients might suggest that Russian content is not spread via Twitter, but via Facebook.
+% IMS but you said you were tracking Facebook.  I think you mean that you can only track FB when the content is also posted to Twitter, but not otherwise.
 
-The content that comes form Foursquare and Instagram is created by the general public.
+The content that comes from Foursquare and Instagram is created by the general public.
 
 There is a clear pattern that mobile clients are used by personal accounts, while media companies set up a special solution to deliver tweets, probably, integrating it with their content delivery systems or simply using a web client from an office machine.
+
+% IMS I wonder if a flow diagram would illustrate the paths this information takes before it gets on Twitter.
 
 \section{Language}
 \label{sec:language}
@@ -153,6 +165,9 @@ Russian tweets constitute of more then half tweets coming from TVNET, where its 
 
 A lot of English content is coming form Instagram (\hl{32.9\%}), that might be due to the dominance of hashtags over other text. Also, there are many tweets labeled as written in other languages that come from Foursquare and Instagram. As Instagram posts are more likely to contain hashtags and Foursqure tweets contain location names, tweets should not be assigned a single language label, but instead be labeled as written in several languages.
 
+% IMS the point of the paper is that you believe this is a more representative sample than would be obtained by simpler methods.  Why do you believe it?  Is the hypothesis falsifiable?
+
+% IMS is there code-switching?  How are you deciding that a tweet is in one language vs another?
 
 \section{Topics}
 \label{sec:topics}
@@ -170,6 +185,7 @@ To investigate the collection further nine topics of interests were defined. The
 \item \texttt{LV009: Brexit} Brexit.
 \end{itemize}
 
+% IMS I note your topics are titled either in Latvian or English.  Is that intentional?  Does it reflect a goal of boosting content from those languages?  Bigger question: why these topics?  More esoteric question: what value are the topics adding to your collection?  How many topics should you have?
 Topics exhibit various temporal patterns, refer to Figure~\ref{fig:topic_timeline}. The volume of tweets is constant for long-lasting news stories such as the refugee crisis, Brexit and ice hockey.
 %
 During the Ice Hockey World Championship the volume of hockey related tweets increases. Similarly, event-based topics---such as Christmas, New Year and Olympics---are the most active during corresponding events, the volume of tweets slowly builds up as an event approaches.
@@ -189,6 +205,8 @@ The most notable exception being Russian tweets about New Year, probably because
 
 \section{Conclusion and future work}
 \label{sec:conclusion}
+
+% IMS The conclusion does not address any of the questions raised in the abstract/introduction.
 
 This paper presents a multilingual tweet collection with some analysis of users, language use and content. The analysis reveal that the resource might be used in several areas ranging from computational linguistics, information retrieval and social science.
 
