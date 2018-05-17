@@ -75,25 +75,19 @@ This paper presents a multilingual, location-anchored corpus of tweets from Latv
 %%%%%%%%%
 % Problem
 %%%%%%%%%
-%There are several challenges of building a tweet collection that adequately represents language use in the country.
-%
 Building a monolingual Latvian collection could be done by harvesting tweets that contain indicative Latvian words which do not present in other languages, similarly to how it is done for Dutch \cite{sang2013}. However, such an approach is not suitable for tweets in Russian and English, as these languages are widely used outside of Latvia.
 %
 For the same reason, a TREC-like collection building approach \cite{lin2016overview} of filtering the publicly available stream of tweets by language would not work.
 %
 A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as a thematic bias might be introduced.
 %
-%A geo-location based collection produces representative results \cite{milajevs:2017:BUCC}.
-%
 An alternative approach would be to retrieve only geo-located tweets. Such a collection would neither be biased linguistically because it is not based on a list of keywords, nor it would be biased thematically because it is not based on a list of users. The downside is that a large number of tweets are not geo-located, which makes retrieval incomplete.
-% IMS self-cite alert. What's new in this work?
 
 %%%%%%%%
 % Method
 %%%%%%%%
 To keep a balance between objectivity and completeness, this work applies a hybrid approach by combining a geo-location based collection procedure with tracking a curated list of users, which is based on the accounts of Latvian media outlets, politicians, government institutions and public figures.
 
-% IMS it's worth saying in one sentence how you will determine that the final collection has the properties you desire.
 Our base assumption is that geo-located tweets are a representative and unbiased sample of tweets from Latvia. Thus, an objective collection should exhibit similar properties as the geo-located one. The main property we study in this work is the language proportion. We hypothesize, that an objective extended collection should have similar language distribution as the initial.
 
 To study the collection in more detail, we manually searched the collection for 9 topics of interest, so we could see whether topics introduce bias.
@@ -102,14 +96,14 @@ To study the collection in more detail, we manually searched the collection for 
 % Results
 %%%%%%%%%
 
-The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there is more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only in the ``global level'' (the extended collection), but also at ``micro'' level (across the topics). In all but one topic, Latvian is more dominant than expected.
+The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there is more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only in the ``macro level'' (the whole collection), but also at ``micro level'' (across individual topics). In all but one topic, Latvian is more dominant than expected.
 % IMS I feel like this paragraph is hard to understand because the notion of "topics" hasn't been really defined yet.  Since this is the introduction, the solution might be to make this statement more general.
 
 %%%%%%%%%%%%%
 % So, what...
 %%%%%%%%%%%%%
 
-Building an unbiased collection is difficult.  In our case the main reason of the introduced bias, might be that Russian and English content is less news-oriented and much more informal. In other words, while it is common to discuss current news in Latvian by engaging with the media, tweets in Russian and English tend to be personal and friend-oriented.
+Building an unbiased collection is difficult.  In our case the main reason of the introduced bias, might be that Russian and English content is less news-oriented and much more informal. In other words, while it is common to discuss current news in Latvian by engaging with the media, tweets in Russian and English tend to be personal and friend-oriented. Future work should verify whether this is actually the case.
 % IMS is this a hypothesis you intend to test here?  Or is this future work?  Or what?
 
 \section{Data collection}
@@ -119,7 +113,7 @@ Over the period from 15 April 2017 to \hl{8 May 2018} the initial set of \hl{1\,
 %
 %\footnotetext{\url{https://developer.twitter.com/en/docs/tweets/filter-realtime/api-reference/post-statuses-filter}}
 %
-The \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia.%\footnotemark{}
+The \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia. It is small enought to fit into Twitter API restrictions and covers about 40\% of the popilation of Latvia.%\footnotemark{}
 %
 %\footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 % IMS.2 according to http://worldpopulationreview.com/countries/latvia-population/, the population of Riga is less than half the total population of Latvia.  However, Twitter only allows bounding boxes for location to be so big, so you can't bound the whole country.
