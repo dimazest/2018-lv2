@@ -81,35 +81,34 @@ Building a monolingual Latvian collection could be done by harvesting tweets tha
 %
 For the same reason, a TREC-like collection building approach \cite{lin2016overview} of filtering the publicly available stream of tweets by language would not work.
 %
-A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as tracking personal accounts might be problematic due to privacy concerns.
+A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as a thematic bias might be introduced.
 %
 %A geo-location based collection produces representative results \cite{milajevs:2017:BUCC}.
 %
-An alternative approach would be to retrieve only geo-located tweets. Such a collection would neither be biased linguistically because it is not based on a list of keywords, nor it would be biased thematically because it is not based on a list of users. However, a large number of tweets are not geo-located, which makes retrieval incomplete.
+An alternative approach would be to retrieve only geo-located tweets. Such a collection would neither be biased linguistically because it is not based on a list of keywords, nor it would be biased thematically because it is not based on a list of users. The downside is that a large number of tweets are not geo-located, which makes retrieval incomplete.
 % IMS self-cite alert. What's new in this work?
 
 %%%%%%%%
 % Method
 %%%%%%%%
-To keep a balance between privacy and objectivity maximizing completeness, this work applies a hybrid approach by combining a geo-location based collection procedure with tracking a curated list of users. To minimize privacy issues, only accounts of organizations and public figures are tracked.
+To keep a balance between objectivity and completeness, this work applies a hybrid approach by combining a geo-location based collection procedure with tracking a curated list of users, which is based on the accounts of Latvian media outlets, politicians, government institutions and public figures.
 
 % IMS it's worth saying in one sentence how you will determine that the final collection has the properties you desire.
+Our base assumption is that geo-located tweets is a representative and unbiased sample of tweets from Latvia. Thus, an objective collection should exhibit similar properties as the geo-located one. The main property we study in this work is the language proportion. We hypothesize, that an objective extended collection should have similar language distribution as the initial.
 
-Our base assumption is that geo-located tweets is a representative and unbiased sample of Latvian Twitter. Thus, an extended collection should exhibit similar properties as the geo-located one. The main property we are interested in this work is the language proportion. We hypothesize, that an unbiased extended collection should have similar language distribution as the initial.
-
-To study the collection in more details, we defined 9 topics and manually search for relevant tweets.
+To study the collection in more details, we manually searched the collection for 9 topics of interest, so we could see whether topics introduce bias.
 
 %%%%%%%%%
 % Results
 %%%%%%%%%
 
-The analysis of the collection shows that it is biased toward content in Latvian: proportionally there are more tweets in Latvian than in Russian and English. Also, Latvian is more dominant language than expected in all but one topic, the exception being the topic about New Year celebration.
+The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there is more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only in the extended collection, but also at the topical level. In all but one topic, Latvian is more dominant than expected.
 
 %%%%%%%%%%%%%
 % So, what...
 %%%%%%%%%%%%%
 
-Building an unbiased collection is difficult.  In our case the main reason of introduced bias, might be that Russian and English content is less news-oriented and much more informal. In other words, while it's common to discuss current news in Latvian by engaging with media, the tweets in Russian and English might be more personal and friend-oriented.
+Building an unbiased collection is difficult.  In our case the main reason of the introduced bias, might be that Russian and English content is less news-oriented and much more informal. In other words, while it is common to discuss current news in Latvian by engaging with the media, tweets in Russian and English tend to be personal and friend-oriented.
 
 \section{Data collection}
 \label{sec:data-collection}
