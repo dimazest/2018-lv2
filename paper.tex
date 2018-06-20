@@ -83,17 +83,13 @@ For the same reason, a TREC-like collection building approach \cite{lin2016overv
 %
 A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as a thematic bias might be introduced.
 %
-%A geo-location based collection produces representative results \cite{milajevs:2017:BUCC}.
-%
 An alternative approach would be to retrieve only geo-located tweets. Such a collection would neither be biased linguistically because it is not based on a list of keywords, nor it would be biased thematically because it is not based on a list of users. The downside is that a large number of tweets are not geo-located, which makes retrieval incomplete.
-% IMS self-cite alert. What's new in this work?
 
 %%%%%%%%
 % Method
 %%%%%%%%
 To keep a balance between objectivity and completeness, this work applies a hybrid approach by combining a geo-location based collection procedure with tracking a curated list of users, which is based on the accounts of Latvian media outlets, politicians, government institutions and public figures.
 
-% IMS it's worth saying in one sentence how you will determine that the final collection has the properties you desire.
 Our base assumption is that geo-located tweets are a representative and unbiased sample of tweets from Latvia. Thus, an objective collection should exhibit similar properties as the geo-located one. The main property we study in this work is the language proportion. We hypothesize, that an objective extended collection should have similar language distribution as the initial.
 
 To study the collection in more detail, we manually searched the collection for 9 topics of interest, so we could see whether topics introduce bias.
@@ -103,13 +99,12 @@ To study the collection in more detail, we manually searched the collection for 
 %%%%%%%%%
 
 The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there are more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only in the ``global level'' (the extended collection), but also at ``micro'' level (across the topics). In all but one topic, Latvian is more dominant than expected.
-% IMS I feel like this paragraph is hard to understand because the notion of "topics" hasn't been really defined yet.  Since this is the introduction, the solution might be to make this statement more general.
 
 %%%%%%%%%%%%%
 % So, what...
 %%%%%%%%%%%%%
 
-Building an unbiased collection is difficult.  In our case the main reason of the introduced bias, might be that Russian and English content is less news-oriented and much more informal. In other words, while it is common to discuss current news in Latvian by engaging with the media, tweets in Russian and English tend to be personal and friend-oriented.
+Building an unbiased collection is difficult.  In our case the main reason of the introduced bias, might be that Russian and English content is less news-oriented and much more informal. In other words, while it is common to discuss current news in Latvian by engaging with the media, tweets in Russian and English tend to be personal and friend-oriented. Future work should verify whether this is actually the case.
 % IMS is this a hypothesis you intend to test here?  Or is this future work?  Or what?
 
 \section{Data collection}
@@ -119,7 +114,7 @@ Over the period from 15 April 2017 to \hl{8 May 2018} the initial set of \hl{1\,
 %
 %\footnotetext{\url{https://developer.twitter.com/en/docs/tweets/filter-realtime/api-reference/post-statuses-filter}}
 %
-Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia.\footnotemark{}
+Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia. It is small enought to fit into Twitter API restrictions and covers about 40\% of the popilation of Latvia.%\footnotemark{}
 %
 \footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 % IMS.2 according to http://worldpopulationreview.com/countries/latvia-population/, the population of Riga is less than half the total population of Latvia.  However, Twitter only allows bounding boxes for location to be so big, so you can't bound the whole country.
@@ -230,16 +225,16 @@ The most notable exception being Russian tweets about New Year, probably because
 
 % IMS The conclusion does not address any of the questions raised in the abstract/introduction.
 
-This paper presents a multilingual tweet collection with some analysis of users, language use and content. The analysis reveals that geo-location and a limited list of Twitter users leads to a biased collection.
-%
-% the resource might be used in several areas ranging from computational linguistics, information retrieval and social science.
-%
-The challenges of building representative and complete tweet collection are:
-\begin{itemize}
-\item How the content of users who do not engage with media accounts (newspapers, radio stations, etc.~\ldots) might be collected respecting their privacy and not introducing bias into the collection?
-\item How to get hints of what topics are more popular among ``minorities''? What are tweets in Russian and English are about?
-\item Some tweets are multilingual. How can code-switching be detected reliably?
-\end{itemize}
+This paper presents a multilingual tweet collection with some analysis of users, language use and content. The analysis revealed differences in language use between the geo-located collection, global collection and topical sub-collections.
+
+However, the question of whether the collection is any good remains open. It would be easy to test its extrinsic properties, for example, whether it leads to improvements in a language identification system when used as training data. But does not reveal its intrinsic properties.
+
+%The challenges of building representative and complete tweet collection are:
+%\begin{itemize}
+%\item How the content of users who do not engage with media accounts (newspapers, radio stations, etc.~\ldots) might be collected respecting their privacy and not introducing bias into the collection?
+%\item How to get hints of what topics are more popular among ``minorities''? What are tweets in Russian and English are about?
+%\item Some tweets are multilingual. How can code-switching be detected reliably?
+%\end{itemize}
 
 \input{figures/topic_timeline.tex}
 

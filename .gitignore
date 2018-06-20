@@ -42,3 +42,5 @@ paper.pdf
 supplement/.ipynb_checkpoints/Random Indexing-checkpoint.ipynb
 supplement/.ipynb_checkpoints/Sandbox-checkpoint.ipynb
 supplement/__pycache__/random_indexing.cpython-36.pyc
+
+supplement/rehydrated_tweets_dump.jsonl
