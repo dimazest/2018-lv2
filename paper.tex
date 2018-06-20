@@ -20,10 +20,10 @@
   urlcolor=urlcolor,
 }
 
-%\usepackage{soul}
-%\definecolor{hlcolor}{RGB}{255, 221, 163}
-%\sethlcolor{hlcolor}
-\newcommand{\hl}[1]{#1}
+\usepackage{soul}
+\definecolor{hlcolor}{RGB}{255, 221, 163}
+\sethlcolor{hlcolor}
+%\newcommand{\hl}[1]{#1}
 
 \usepackage{mathptmx}
 
@@ -70,14 +70,14 @@ Corpus Linguistics \sep Latvian \sep Russian \sep English
 
 \section*{Introduction}
 
-This paper presents a multilingual, location-anchored corpus of tweets from Latvia. The main challenge of collecting a socially representative corpus from this country is that several languages are used there: Latvian, the main communication language, Russian, the language of the largest minority in Latvia, and English.
+This paper presents a multilingual, location-anchored corpus of tweets from Latvia. The main challenge of collecting a socially representative corpus from this country is that several languages are used there: Latvian, the main communication language and the only official language in Latvia, Russian, the language of the largest minority in Latvia, and English.
 
 %%%%%%%%%
 % Problem
 %%%%%%%%%
 %There are several challenges of building a tweet collection that adequately represents language use in the country.
 %
-Building a monolingual Latvian collection could be done by harvesting tweets that contain indicative Latvian words which do not present in other languages, similarly to how it is done for Dutch \cite{sang2013}. However, such an approach is not suitable for tweets in Russian and English, as these languages are widely used outside of Latvia.
+Building a monolingual Latvian collection could be done by harvesting tweets that contain indicative Latvian words, which are not present in other languages, similarly to how it is done for Dutch \cite{sang2013}. However, such an approach is not suitable for tweets in Russian and English, as these languages are widely used outside of Latvia.
 %
 For the same reason, a TREC-like collection building approach \cite{lin2016overview} of filtering the publicly available stream of tweets by language would not work.
 %
@@ -102,7 +102,7 @@ To study the collection in more detail, we manually searched the collection for 
 % Results
 %%%%%%%%%
 
-The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there is more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only in the ``global level'' (the extended collection), but also at ``micro'' level (across the topics). In all but one topic, Latvian is more dominant than expected.
+The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there are more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only in the ``global level'' (the extended collection), but also at ``micro'' level (across the topics). In all but one topic, Latvian is more dominant than expected.
 % IMS I feel like this paragraph is hard to understand because the notion of "topics" hasn't been really defined yet.  Since this is the introduction, the solution might be to make this statement more general.
 
 %%%%%%%%%%%%%
@@ -119,9 +119,9 @@ Over the period from 15 April 2017 to \hl{8 May 2018} the initial set of \hl{1\,
 %
 %\footnotetext{\url{https://developer.twitter.com/en/docs/tweets/filter-realtime/api-reference/post-statuses-filter}}
 %
-The \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia.%\footnotemark{}
+Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia.\footnotemark{}
 %
-%\footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
+\footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 % IMS.2 according to http://worldpopulationreview.com/countries/latvia-population/, the population of Riga is less than half the total population of Latvia.  However, Twitter only allows bounding boxes for location to be so big, so you can't bound the whole country.
 
 In addition to the location, 420 accounts were tracked.%\footnotemark{} %\hl{The whole list of screen names together with user ID is available in the supplement.}
@@ -181,7 +181,9 @@ Latvian is the dominant language: \hl{917\,259 (73.8\%)} tweets are written in i
 
 Latvian dominates almost in every client application. Tweets coming from Foursquare are labeled as Latvian in \hl{78.4\%} cases (see Table~\ref{tab:source_counts}), that might be due to Latvian location names.
 
-Russian tweets constitute of more then half tweets coming from TVNET, where its share is \hl{52.8\%} while Latvian is \hl{46.1\%}, and from Facebook, where the two most active users are Russian media.
+More than half tweets that come from TVNET are in Russian. Its share is \hl{52.8\%} while Latvian's is \hl{46.1\%}. Same goes for tweets that come from Facebook, where the two most active users are the Russian edision of media portals (\sn{mixnews\_lv} and \sn{Otkrito})
+
+, where the two most active users are Russian media.
 
 A lot of English content is coming form Instagram (\hl{36.1\%}), that might be due to the dominance of hashtags over other text. Also, there are many tweets labeled as written in other languages that come from Foursquare and Instagram. As Instagram posts are more likely to contain hashtags and Foursqure tweets contain location names, tweets should not be assigned a single language label, but instead be labeled as written in several languages.
 
@@ -192,13 +194,13 @@ A lot of English content is coming form Instagram (\hl{36.1\%}), that might be d
 \section{Topics}
 \label{sec:topics}
 
-To investigate the collection further nine topics of interests were defined. The collection was manually searched using keywords to get relevant tweets. The topics are:
+To investigate the collection further, \hl{nine} topics of interests were defined. The collection was manually searched using keywords to get relevant tweets. The topics are:
 \begin{itemize}
 \item \texttt{LV001: Winter} Everything about winter.
 \item \texttt{LV002: 
 The Chronicles of Melanie} Mel\=anijas hronika (The Chronicles of Melanie) is a Latvian movie that was selected for Foreign-Language Category for Oscars.
 \item \texttt{LV003: Refugees} A broad topic about refugee crisis in Europe, attitude to immigration and immigrants.
-\item \texttt{LV004: Blizzard of Souls} A Latvian movie Dv\=eese\c{l}u putenis (Blizzard of Souls) that is currently in production.
+\item \texttt{LV004: Blizzard of Souls} A Latvian movie Dv\=ese\c{l}u putenis (Blizzard of Souls) that is currently in production.
 \item \texttt{LV005: Ice hockey} Ice hockey related tweets.
 \item \texttt{LV006: Christmas} Christmas.
 \item \texttt{LV007: New Year} New Year.
@@ -211,13 +213,13 @@ Topics exhibit various temporal patterns, refer to Figure~\ref{fig:topic_timelin
 %
 During the Ice Hockey World Championship the volume of hockey related tweets increases. Similarly, event-based topics---such as Christmas, New Year and Olympics---are the most active during corresponding events, the volume of tweets slowly builds up as an event approaches.
 
-In case of Christmas, we see unexpected activity in March which is due to the discussion of making the Orthodox Christmas a public holiday in Parliament. This topic exhibits some cultural differences and language use. Tweets in Latvian peak during Advent and Christmas in December, tweets in Russian reach maximum both in December and early January when Orthodox Christmas are celebrated. It worth noting that during the discussion whether Orthodox Christmas should be a public holiday, it sometimes was referred as ``Russian Christmas.''
+In case of Christmas, we see unexpected activity in March which is due to the discussion of making the Orthodox Christmas a public holiday in Parliament. This topic exhibits some cultural differences and language use. Tweets in Latvian peak during Advent and Christmas in December, tweets in Russian reach maximum both in December and early January when Orthodox Christmas are celebrated. It is worth noting that during the discussion whether Orthodox Christmas should be a public holiday, it sometimes was referred as ``Russian Christmas.''
 
 Topics about movies are the smallest volume-wise. For a movie that was shown at several international festivals, we see multilingual content, while tweets about a movie that is still in production are solely monolingual.
 
 The topic about Winter is an example of a seasonal topic, which is mostly about the weather, the pictures of snow and driving conditions.
 
-Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For all topics the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}). For Russian and English these numbers are generally lower than global average.
+Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For all topics the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}). For Russian and English these numbers are generally lower than the global average.
 
 The most notable exception being Russian tweets about New Year, probably because of the content written by Russian tourists. The topic about Winter comes close for Russian with respect to the expected average, but is low for English tweets. Interestingly, for the international news topics, there is proportionally more English content about Brexit than about refugees.
 
