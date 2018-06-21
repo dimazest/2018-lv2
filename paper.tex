@@ -35,6 +35,8 @@
 
 \newcommand{\sn}[1]{\href{https://twitter.com/#1}{\texttt{@#1}}}
 
+\newcommand{\sfile}[1]{\texttt{#1}}
+
 \begin{document}
 \begin{frontmatter}              % The preamble begins here.
 
@@ -43,17 +45,19 @@
 %\runningtitle{LV2}
 %\subtitle{Subtitle}
 
-\author[A]{\fnms{Anonymous} \snm{Submission}%
-\thanks{Corresponding Author: Book Production Manager, IOS Press, Nieuwe Hemweg 6B,
-1013 BG Amsterdam, The Netherlands; E-mail:
-bookproduction@iospress.nl.}}
+\author[A]{\fnms{Dmitrijs} \snm{Milajevs}%
+  \thanks{Corresponding Author: Dmitrijs Milajevs, Guest Researcher,
+    100 Bureau Drive,
+    Gaithersburg, MD 20899, USA%
+    ;
+    E-mail: dmitrijs.milajevs@nist.gov.}}
 %\author[B]{\fnms{Second} \snm{Author}}
 %and
 %\author[B]{\fnms{Third} \snm{Author}
 
 
-%\runningauthor{B.P. Manager et al.}
-\address[A]{Confidential Review Copy, Do Not Distribute}
+\runningauthor{D. Milajevs}
+\address[A]{Guest Researcher at National Institute of Standards and Technology, Maryland, USA}
 %\address[B]{Short Affiliation of Second Author and Third Author}
 
 %\begin{abstract}
@@ -119,10 +123,9 @@ Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to
 \footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 % IMS.2 according to http://worldpopulationreview.com/countries/latvia-population/, the population of Riga is less than half the total population of Latvia.  However, Twitter only allows bounding boxes for location to be so big, so you can't bound the whole country.
 
-In addition to the location, 420 accounts were tracked.%\footnotemark{} %\hl{The whole list of screen names together with user ID is available in the supplement.}
-%\footnotetext{In this paper, by ``tracking users'', we mean that their user IDs where passed to the Twitter API to collect tweets that they created, or the tweets that are replies by other users to their tweets. Refer to \url{https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters\#follow} for a complete description. Keep in mind that this is different from the case when a user follows another user.}
-%
-The accounts are mostly Latvian (that is, coming from Latvia, but not necessary produce content in Latvian) news outlets, politicians, businesses, artists and sport clubs. 
+In addition to the location, 420 accounts were tracked.\footnotemark{} The accounts are mostly Latvian (that is, coming from Latvia, but not necessary produce content in Latvian) news outlets, politicians, businesses, artists and sport clubs. We avoided following personal accounts to respect their privacy. We also avoided bootstrapping the list, as it might have introduced accounts that originate outside of Latvia, for example, \sn{BBC}. The whole list of screen names together with user IDs is available in the supplement file \sfile{lv.cfg}.
+
+\footnotetext{In this paper, by \hl{``tracking users''}, we mean that their user IDs where passed to the Twitter API to collect tweets that they created, or the tweets that are replies by other users to their tweets. Refer to \href{https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters\#follow}{to the Twitter documentation} for a complete description. Keep in mind that this is different from the case when a user follows another user.}
 
 % IMS how did you select those accounts? Can you describe them generically here?  (i.e. "Latvian news outlets, famous actors and politicians, and a selection of Eurovision finalists.")  You should make clear you hand picked them based on background knowledge or if this list was scraped from a public resource, since it reflects effort put into making the collection.
 
@@ -193,9 +196,9 @@ To investigate the collection further, \hl{nine} topics of interests were define
 \begin{itemize}
 \item \texttt{LV001: Winter} Everything about winter.
 \item \texttt{LV002: 
-The Chronicles of Melanie} Mel\=anijas hronika (The Chronicles of Melanie) is a Latvian movie that was selected for Foreign-Language Category for Oscars.
+The Chronicles of Melanie} Mel\=anijas Hronika (The Chronicles of Melanie) is a Latvian movie that was selected for Foreign-Language Category for Oscars.
 \item \texttt{LV003: Refugees} A broad topic about refugee crisis in Europe, attitude to immigration and immigrants.
-\item \texttt{LV004: Blizzard of Souls} A Latvian movie Dv\=ese\c{l}u putenis (Blizzard of Souls) that is currently in production.
+\item \texttt{LV004: Blizzard of Souls} A Latvian movie Dv\=ese\c{l}u Putenis (Blizzard of Souls) that is currently in production.
 \item \texttt{LV005: Ice hockey} Ice hockey related tweets.
 \item \texttt{LV006: Christmas} Christmas.
 \item \texttt{LV007: New Year} New Year.
