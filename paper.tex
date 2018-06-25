@@ -96,13 +96,13 @@ To keep a balance between objectivity and completeness, this work applies a hybr
 
 Our base assumption is that geo-located tweets are a representative and unbiased sample of tweets from Latvia. Thus, an objective collection should exhibit similar properties as the geo-located one. The main property we study in this work is the language proportion. We hypothesize, that an objective extended collection should have similar language distribution as the initial.
 
-To study the collection in more detail, we manually searched the collection for 9 topics of interest, so we could see whether topics introduce bias.
+To study the collection in more detail, we manually searched the collection for \hl{9} topics of interest.
 
 %%%%%%%%%
 % Results
 %%%%%%%%%
 
-The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there are more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only in the ``global level'' (the extended collection), but also at ``micro'' level (across the topics). In all but one topic, Latvian is more dominant than expected.
+The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there are more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only at the ``global level'' (the whole collection), but also at the ``micro'' level (across the topics). \hl{In all but one topic, Latvian is more dominant than expected.}
 
 %%%%%%%%%%%%%
 % So, what...
@@ -140,31 +140,32 @@ In addition to the location, 420 accounts were tracked.\footnotemark{} The accou
 
 On average, about \hl{3\,200} tweets were collected per day, which is more than 1\,500 by the geo-location based technique in \cite{milajevs:2017:BUCC}. Most of the tweets came from the official Twitter clients for Web, Android or iPhone. Together these clients contributed more than 60\% of all collected tweets, refer to Table~\ref{tab:source_counts} for more details.
 
-The twitter web client is used by both the general public and media companies. The top 5 of most active accounts consists only of tracked Latvian media accounts: \sn{DienaLV}, a newspaper, \sn{LA\_lv}, another newspaper, \sn{JaunsLV}, a media portal, \sn{TV3\_Play}, a TV channel, and \sn{dblv}, a newspaper.
+The twitter web client is used by both the general public and media companies. The top 5 of most active accounts consists only of tracked Latvian media accounts: \sn{DienaLV} (a newspaper), \sn{LA\_lv} (another newspaper), \sn{JaunsLV} (a media portal), \sn{TV3\_Play} (a TV channel), and \sn{dblv} (a newspaper).
 
 Notably, for mobile clients, the majority of tweets comes from the general public, because they are either geo-located or mention a tracked account. The number of tweets coming from tracked accounts, that are mostly media, is lower for Android \hl{(8.4\%)} than for iPhone \hl{(13.8\%)}. The difference can be explained by the fact, that all top 5 Android users are personal accounts, while for iPhone there are only 2 personal accounts in the top 5. \sn{TV3zinas}, a news account of a TV channel, tweets the most from iPhone. \sn{Lattelecom}, a telecommunication company, is the second most active iPhone user. \sn{AstrologiLv} writes about astrology and is the fourth most active iPhone user. All three accounts tweet exclusively in Latvian and were tracked during corpus collection.
 
 %Client applications that produce tweets mostly from tracked accounts are used by the media. 
 % IMS I don't understand the previous sentence
-%For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are tracked media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not tracked and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not tracked.
+For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are tracked media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not tracked and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not tracked.
 
 % IMS terminology jumble. You are tracking, and also other users are tracking, and you selected users who were tracking (well, actually, probably retweeting) tweets from accounts you were tracking already.  You want this section to read like a recipe for your reader who wants to duplicate your effort in Swahili or whatever.
 
-%TweetDeck is used by \sn{DelfiLV}, a major media portal, \sn{LV\_Portals}, an account run by the official government gazette of the Republic of Latvia, \sn{lsmlv}, an account of a publicly funded radio and television organization (LSM), \sn{ltvzinas}, the news account of Latvian Television, \sn{RietumuRadio}, a radio station. 
+TweetDeck is used by \sn{DelfiLV}, a major media portal, \sn{LV\_Portals}, an account run by the official government gazette of the Republic of Latvia, \sn{lsmlv}, an account of a publicly funded radio and television organization (LSM), \sn{ltvzinas}, the news account of Latvian Television, \sn{RietumuRadio}, a radio station. 
 
-%TVNET is a media company that controls several media portals. The most active accounts that use their application are \sn{TVnet\_portals}, \sn{RusApollo}, \sn{TVnet\_rus}, \sn{SportsTVNET}, and \sn{SejasLV}.
+TVNET is a media company that controls several media portals. The most active accounts that use their application are \sn{TVnet\_portals}, \sn{RusApollo}, \sn{TVnet\_rus}, \sn{SportsTVNET}, and \sn{SejasLV}. As mentioned above, \sn{RusApollo} and \sn{TVnet\_rus} post identical messages.
 
-%The tweet delivery service \texttt{dlvr.it} is used by the newspaper \sn{nralv} and their sport portal \sn{Sportacentrs}, the photo account of the national news agency (LETA) \sn{letafoto}, \sn{Kompresori} and the sport account of Latvian Television \sn{ltvsports}.
+The tweet delivery service \texttt{dlvr.it} is used by the newspaper \sn{nralv} and their sport portal \sn{Sportacentrs}, the photo account of the national news agency (LETA) \sn{letafoto}, \sn{Kompresori} and the sport account of Latvian Television \sn{ltvsports}.
 
-%SKATIES delivers video content from several sources. The most active accounts are \sn{skatieslatvija}, \sn{lnt\_lv}, \sn{tv3lv}, \sn{BezTabuTV3} and \sn{TV3Zinas}.
+SKATIES delivers video content from several sources. The most active accounts are \sn{skatieslatvija}, \sn{lnt\_lv}, \sn{tv3lv}, \sn{BezTabuTV3} and \sn{TV3Zinas}.
 
-Some tweets come from social media networks. Facebook content mostly comes from tracked media accounts. The top 5 most active users are: \sn{mixnews\_lv}, the Russian edition of a media portal, \sn{Otkrito}, also the Russian edition of \sn{JaunsLV}, \sn{labdienlv}, \sn{ekonimikalv} and \sn{nozare}, all three belonging to one Latvian media portal. The fact that Russian accounts are not active among other clients might suggest that Russian content is not spread initially via Twitter, but is cross-posted from Facebook.
+Some tweets come from social media networks. Facebook content mostly comes from tracked media accounts. The top 5 most active users are: \sn{mixnews\_lv} (the Russian edition of the Mixnews.lv media portal), \sn{Otkrito} (the Russian edition of \sn{JaunsLV}), \sn{labdienlv}, \sn{ekonimikalv} and \sn{nozare}, all three belonging to one Latvian media portal.
+%The fact that Russian accounts are not active among other clients might suggest that Russian content is not spread initially via Twitter, but is cross-posted from Facebook.
 % IMS but you said you were tracking Facebook.  I think you mean that you can only track FB when the content is also posted to Twitter, but not otherwise.
 
-The content that comes from Foursquare and Instagram is created by the general public.
+%The content that is crossposted from Foursquare and Instagram is created by the accounts that are not followed.
 % IMS.2 same comment as above... when you say "comes from" you mean crossposted content, right?  It's confusing because you also say "comes from" to mean the organization authoring the content.
 
-There is a clear pattern that mobile clients are used by personal accounts, while media companies set up a special solution to deliver tweets, probably, integrating it with their content delivery systems or simply using a web client from an office machine.
+%There is a clear pattern that mobile clients are used by personal accounts, while media companies set up a special solution to deliver tweets, probably, integrating it with their content delivery systems or simply using a web client from an office machine.
 
 % IMS I wonder if a flow diagram would illustrate the paths this information takes before it gets on Twitter.
 
@@ -177,13 +178,15 @@ Latvian is the dominant language: \hl{917\,259 (73.8\%)} tweets are written in i
 
 \footnotetext{Twitter labels tweets with the language they are written in.}
 
-Latvian dominates almost in every client application. Tweets coming from Foursquare are labeled as Latvian in \hl{78.4\%} cases (see Table~\ref{tab:source_counts}), that might be due to Latvian location names.
-
-More than half tweets that come from TVNET are in Russian. Its share is \hl{52.8\%} while Latvian's is \hl{46.1\%}. Same goes for tweets that come from Facebook, where the two most active users are the Russian edision of media portals (\sn{mixnews\_lv} and \sn{Otkrito})
-
-, where the two most active users are Russian media.
-
-A lot of English content is coming form Instagram (\hl{36.1\%}), that might be due to the dominance of hashtags over other text. Also, there are many tweets labeled as written in other languages that come from Foursquare and Instagram. As Instagram posts are more likely to contain hashtags and Foursqure tweets contain location names, tweets should not be assigned a single language label, but instead be labeled as written in several languages.
+%Latvian dominates almost in every client application (see Table~\ref{tab:source_counts}).
+%Tweets coming from Foursquare are labeled as Latvian in \hl{78.4\%} cases.
+% , that might be due to Latvian location names.
+%
+%More than half tweets that come from TVNET are in Russian. Its share is \hl{52.8\%} while Latvian's is \hl{46.1\%}.
+%
+%Same goes for tweets that come from Facebook, where the two most active users are the Russian edision of media portals (\sn{mixnews\_lv} and \sn{Otkrito}).
+%
+%A lot of English content is coming form Instagram (\hl{36.1\%}), that might be due to the dominance of hashtags over other text. Also, there are many tweets labeled as written in other languages that come from Foursquare and Instagram. As Instagram posts are more likely to contain hashtags and Foursqure tweets contain location names, tweets should not be assigned a single language label, but instead be labeled as written in several languages.
 
 % IMS the point of the paper is that you believe this is a more representative sample than would be obtained by simpler methods.  Why do you believe it?  Is the hypothesis falsifiable?
 
