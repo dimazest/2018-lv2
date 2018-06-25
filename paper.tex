@@ -83,7 +83,7 @@ This paper presents a multilingual, location-anchored corpus of tweets from Latv
 %
 Building a monolingual Latvian collection could be done by harvesting tweets that contain indicative Latvian words, which are not present in other languages, similarly to how it is done for Dutch \cite{sang2013}. However, such an approach is not suitable for tweets in Russian and English, as these languages are widely used outside of Latvia.
 %
-For the same reason, a TREC-like collection building approach \cite{lin2016overview} of filtering the publicly available stream of tweets by language would not work.
+For the same reason, a TREC-like collection building approach \cite{lin2017rts} of filtering the publicly available stream of tweets by language would not work.
 %
 A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as a thematic bias might be introduced.
 %
@@ -92,7 +92,7 @@ An alternative approach would be to retrieve only geo-located tweets. Such a col
 %%%%%%%%
 % Method
 %%%%%%%%
-To keep a balance between objectivity and completeness, this work applies a hybrid approach by combining a geo-location based collection procedure with tracking a curated list of users, which is based on the accounts of Latvian media outlets, politicians, government institutions and public figures.
+To keep a balance between objectivity and completeness, this work applies a hybrid approach by combining a geo-location based collection procedure with following a curated list of users, which is based on the accounts of Latvian media outlets, politicians, government institutions and public figures.
 
 Our base assumption is that geo-located tweets are a representative and unbiased sample of tweets from Latvia. Thus, an objective collection should exhibit similar properties as the geo-located one. The main property we study in this work is the language proportion. We hypothesize, that an objective extended collection should have similar language distribution as the initial.
 
@@ -123,15 +123,13 @@ Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to
 \footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 % IMS.2 according to http://worldpopulationreview.com/countries/latvia-population/, the population of Riga is less than half the total population of Latvia.  However, Twitter only allows bounding boxes for location to be so big, so you can't bound the whole country.
 
-In addition to the location, 420 accounts were tracked.\footnotemark{} The accounts are mostly Latvian (that is, coming from Latvia, but not necessary produce content in Latvian) news outlets, politicians, businesses, artists and sport clubs. We avoided following personal accounts to respect their privacy. We also avoided bootstrapping the list, as it might have introduced accounts that originate outside of Latvia, for example, \sn{BBC}. The whole list of screen names together with user IDs is available in the supplement file \sfile{lv.cfg}.
+In addition to the location, 420 accounts were followed.\footnotemark{} The accounts are mostly Latvian (that is, coming from Latvia, but not necessary produce content in Latvian) news outlets, politicians, businesses, artists and sport clubs. We avoided following personal accounts to respect their privacy. We also avoided bootstrapping the list, as it might have introduced accounts that originate outside of Latvia, for example, \sn{BBC}. The whole list of screen names together with user IDs is available in the supplement file \sfile{lv.cfg}.
 
-\footnotetext{In this paper, by \hl{``tracking users''}, we mean that their user IDs where passed to the Twitter API to collect tweets that they created, retweets of those tweets, or the tweets that are replies by other users to their tweets. Refer to \href{https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters\#follow}{to the Twitter documentation} for a complete description. Keep in mind that this is different from the case when a user follows another user.}
+\footnotetext{In this paper, by ``following users'', we mean that their user IDs where passed to the Twitter API to collect tweets that they created, retweets of those tweets, or the tweets that are replies by other users to their tweets. Refer to \href{https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters\#follow}{to the Twitter documentation} for a complete description. Keep in mind that this is different from the case when a user follows another user.}
 
 % IMS how did you select those accounts? Can you describe them generically here?  (i.e. "Latvian news outlets, famous actors and politicians, and a selection of Eurovision finalists.")  You should make clear you hand picked them based on background knowledge or if this list was scraped from a public resource, since it reflects effort put into making the collection.
 
-
-%To comply with Twitter's terms of service, on \hl{8 May 2018}, the raw tweet data was redownloaded to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,242\,943} tweets that formed the final collection presented here.
-% IMS I think "hydrate" is a jargon term that twarc invented but that isn't widely used.
+To comply with Twitter's terms of service, on \hl{8 May 2018}, the raw tweet data was redownloaded to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,242\,943} tweets that formed the final collection presented here.
 
 \section{Twitter users}
 \label{sec:global-analysis}
@@ -140,17 +138,18 @@ In addition to the location, 420 accounts were tracked.\footnotemark{} The accou
 
 On average, about \hl{3\,200} tweets were collected per day, which is more than 1\,500 by the geo-location based technique in \cite{milajevs:2017:BUCC}. Most of the tweets came from the official Twitter clients for Web, Android or iPhone. Together these clients contributed more than 60\% of all collected tweets, refer to Table~\ref{tab:source_counts} for more details.
 
-The twitter web client is used by both the general public and media companies. The top 5 of most active accounts consists only of tracked Latvian media accounts: \sn{DienaLV} (a newspaper), \sn{LA\_lv} (another newspaper), \sn{JaunsLV} (a media portal), \sn{TV3\_Play} (a TV channel), and \sn{dblv} (a newspaper).
+The twitter web client is used by both the general public and media companies. The top 5 of most active accounts consists only of followed Latvian media accounts: \sn{DienaLV} (a newspaper), \sn{LA\_lv} (another newspaper), \sn{JaunsLV} (a media portal), \sn{TV3\_Play} (a TV channel), and \sn{dblv} (a newspaper).
 
-Notably, for mobile clients, the majority of tweets comes from the general public, because they are either geo-located or mention a tracked account. The number of tweets coming from tracked accounts, that are mostly media, is lower for Android \hl{(8.4\%)} than for iPhone \hl{(13.8\%)}. The difference can be explained by the fact, that all top 5 Android users are personal accounts, while for iPhone there are only 2 personal accounts in the top 5. \sn{TV3zinas}, a news account of a TV channel, tweets the most from iPhone. \sn{Lattelecom}, a telecommunication company, is the second most active iPhone user. \sn{AstrologiLv} writes about astrology and is the fourth most active iPhone user. All three accounts tweet exclusively in Latvian and were tracked during corpus collection.
+%Notably, for mobile clients, the majority of tweets comes from \hl{the general public}, because they are either geo-located or mention a followed account.
+The proportion of tweets coming from followed accounts is lower for Android \hl{(8.4\%)} than for iPhone \hl{(13.8\%)}. The difference can be explained by the insight, that all top 5 Android users are personal accounts, while for iPhone there are only 2 personal accounts in the top 5. \sn{TV3zinas} (a news account of a TV channel) tweets the most from iPhone. \sn{Lattelecom} (a telecommunication company) is the second most active iPhone user. \sn{AstrologiLv} writes about astrology and is the fourth most active iPhone user. All three accounts tweet exclusively in Latvian and were followed during corpus collection.
 
 %Client applications that produce tweets mostly from tracked accounts are used by the media. 
 % IMS I don't understand the previous sentence
-For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are tracked media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not tracked and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not tracked.
+For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are followed media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not followed and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not followed.
 
 % IMS terminology jumble. You are tracking, and also other users are tracking, and you selected users who were tracking (well, actually, probably retweeting) tweets from accounts you were tracking already.  You want this section to read like a recipe for your reader who wants to duplicate your effort in Swahili or whatever.
 
-TweetDeck is used by \sn{DelfiLV}, a major media portal, \sn{LV\_Portals}, an account run by the official government gazette of the Republic of Latvia, \sn{lsmlv}, an account of a publicly funded radio and television organization (LSM), \sn{ltvzinas}, the news account of Latvian Television, \sn{RietumuRadio}, a radio station. 
+TweetDeck is used by \sn{DelfiLV} (a major media portal), \sn{LV\_Portals}, (the official government gazette), \sn{lsmlv} (a publicly funded radio and television organization (LSM)), \sn{ltvzinas} (the news account of Latvian Television) \sn{RietumuRadio} (a radio station). 
 
 TVNET is a media company that controls several media portals. The most active accounts that use their application are \sn{TVnet\_portals}, \sn{RusApollo}, \sn{TVnet\_rus}, \sn{SportsTVNET}, and \sn{SejasLV}. As mentioned above, \sn{RusApollo} and \sn{TVnet\_rus} post identical messages.
 
@@ -158,7 +157,7 @@ The tweet delivery service \texttt{dlvr.it} is used by the newspaper \sn{nralv} 
 
 SKATIES delivers video content from several sources. The most active accounts are \sn{skatieslatvija}, \sn{lnt\_lv}, \sn{tv3lv}, \sn{BezTabuTV3} and \sn{TV3Zinas}.
 
-Some tweets come from social media networks. Facebook content mostly comes from tracked media accounts. The top 5 most active users are: \sn{mixnews\_lv} (the Russian edition of the Mixnews.lv media portal), \sn{Otkrito} (the Russian edition of \sn{JaunsLV}), \sn{labdienlv}, \sn{ekonimikalv} and \sn{nozare}, all three belonging to one Latvian media portal.
+Some tweets are crossposts from other social media networks. Facebook content mostly comes from the followed media accounts. The top 5 most active users are: \sn{mixnews\_lv} (the Russian edition of the Mixnews.lv media portal), \sn{Otkrito} (the Russian edition of \sn{JaunsLV}), \sn{labdienlv}, \sn{ekonimikalv} and \sn{nozare} (all three belong to the same media company and tweet in Latvian).
 %The fact that Russian accounts are not active among other clients might suggest that Russian content is not spread initially via Twitter, but is cross-posted from Facebook.
 % IMS but you said you were tracking Facebook.  I think you mean that you can only track FB when the content is also posted to Twitter, but not otherwise.
 
@@ -201,6 +200,8 @@ To investigate the collection further, \hl{16} topics of interests were defined.
 \item \texttt{LV005:} \textbf{Ice hockey} \ Ice hockey.
 \item \texttt{LV003:} \textbf{Refugees} \ Refugee crisis in Europe, attitude to immigration and immigrants.
 \item \texttt{LV009:} \textbf{Brexit} \ Withdrawal of the United Kingdom from the European Union known as Brexit.
+\item \texttt{LV002:} \textbf{The Chronicles of Melanie} \ Mel\=anijas Hronika (The Chronicles of Melanie) is a Latvian movie that was selected for the Foreign-Language Category for Oscars.
+\item \texttt{LV004:} \textbf{Blizzard of Souls} \ A Latvian movie Dv\=ese\c{l}u Putenis (Blizzard of Souls) that is in production by the time of writing.
 \item \texttt{LV001:} \textbf{Winter} \ Winter, snow and cold weather.
 \item \texttt{LV015:} \textbf{May 4} \ The Restoration of Independence Day.
 \item \texttt{LV011:} \textbf{May 8-9} \ Remembrance of the end of Word War II (May 8). It is also honored as the Victory Day on May 9. The Europe Day is observed on May 9. Tweets about any of the three events are relevant.
@@ -210,8 +211,6 @@ To investigate the collection further, \hl{16} topics of interests were defined.
 \item \texttt{LV006:} \textbf{Christmas} \ Christmas.
 \item \texttt{LV007:} \textbf{New Year} \ New Year.
 \item \texttt{LV008:} \textbf{Olympics} \ The Olympic games and the Latvian team.
-\item \texttt{LV002:} \textbf{The Chronicles of Melanie} \ Mel\=anijas Hronika (The Chronicles of Melanie) is a Latvian movie that was selected for the Foreign-Language Category for Oscars.
-\item \texttt{LV004:} \textbf{Blizzard of Souls} \ A Latvian movie Dv\=ese\c{l}u Putenis (Blizzard of Souls) that is in production by the time of writing.
 \end{itemize}
 
 % IMS I note your topics are titled either in Latvian or English.  Is that intentional?  Does it reflect a goal of boosting content from those languages?  Bigger question: why these topics?  More esoteric question: what value are the topics adding to your collection?  How many topics should you have?
