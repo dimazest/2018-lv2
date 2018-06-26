@@ -8,7 +8,7 @@
 \usepackage{multirow}
 
 \usepackage{color}
-\usepackage[pdfusetitle]{hyperref}
+\usepackage{hyperref}
 % http://colorschemedesigner.com/#4o42FfqublRMS
 \definecolor{linkcolor}{RGB}{66, 54, 122}
 \definecolor{citecolor}{RGB}{84, 141, 100}
@@ -19,6 +19,7 @@
   citecolor=citecolor,
   urlcolor=urlcolor,
 }
+\def\UrlBreaks{\do\/\do-}
 
 \usepackage{soul}
 \definecolor{hlcolor}{RGB}{255, 221, 163}
@@ -45,6 +46,7 @@
 %\runningtitle{LV2}
 %\subtitle{Subtitle}
 
+\hypersetup{pdfauthor={Dmitrijs Milajevs}}
 \author[A]{\fnms{Dmitrijs} \snm{Milajevs}%
   \thanks{Corresponding Author: Dmitrijs Milajevs, Guest Researcher,
     100 Bureau Drive,
@@ -85,9 +87,9 @@ Building a monolingual Latvian collection could be done by harvesting tweets tha
 %
 For the same reason, a TREC-like collection building approach \cite{lin2017rts} of filtering the publicly available stream of tweets by language would not work.
 %
-A tweet collection based on a curated list of users \cite{SANVICENTE16.465} is effective, but extra care must be taken as a thematic bias might be introduced.
+A tweet collection based on a curated list of users \cite{SANVICENTE16.465,L14-1642} is effective, but extra care must be taken as a thematic bias might be introduced.
 %
-An alternative approach would be to retrieve only geo-located tweets. Such a collection would neither be biased linguistically because it is not based on a list of keywords, nor it would be biased thematically because it is not based on a list of users. The downside is that a large number of tweets are not geo-located, which makes retrieval incomplete.
+An alternative approach would be to retrieve only geo-located tweets \cite{milajevs:2017:BUCC}. Such a collection would neither be biased linguistically because it is not based on a list of keywords, nor it would be biased thematically because it is not based on a list of users. The downside is that a large number of tweets are not geo-located, which makes retrieval incomplete.
 
 %%%%%%%%
 % Method
@@ -114,18 +116,14 @@ Building an unbiased collection is difficult.  In our case the main reason of th
 \section{Data collection}
 \label{sec:data-collection}
 
-Over the period from 15 April 2017 to \hl{8 May 2018} the initial set of \hl{1\,708\,236} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API.%\footnotemark{}
-%
-%\footnotetext{\url{https://developer.twitter.com/en/docs/tweets/filter-realtime/api-reference/post-statuses-filter}}
-%
-Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia. It is small enought to fit into Twitter API restrictions and covers about 40\% of the popilation of Latvia.%\footnotemark{}
+Over the period from 15 April 2017 to \hl{8 May 2018} the initial set of \hl{1\,708\,236} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API. Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia. It is small enought to fit into Twitter API restrictions and covers about 40\% of the popilation of Latvia.%\footnotemark{}
 %
 \footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 % IMS.2 according to http://worldpopulationreview.com/countries/latvia-population/, the population of Riga is less than half the total population of Latvia.  However, Twitter only allows bounding boxes for location to be so big, so you can't bound the whole country.
 
 In addition to the location, 420 accounts were followed.\footnotemark{} The accounts are mostly Latvian (that is, coming from Latvia, but not necessary produce content in Latvian) news outlets, politicians, businesses, artists and sport clubs. We avoided following personal accounts to respect their privacy. We also avoided bootstrapping the list, as it might have introduced accounts that originate outside of Latvia, for example, \sn{BBC}. The whole list of screen names together with user IDs is available in the supplement file \sfile{lv.cfg}.
 
-\footnotetext{In this paper, by ``following users'', we mean that their user IDs where passed to the Twitter API to collect tweets that they created, retweets of those tweets, or the tweets that are replies by other users to their tweets. Refer to \href{https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters\#follow}{to the Twitter documentation} for a complete description. Keep in mind that this is different from the case when a user follows another user.}
+\footnotetext{In this paper, by ``following users'', we mean that their user IDs where passed to the Twitter API to collect tweets that they created, retweets of those tweets, or the tweets that are replies by other users to their tweets. Refer to \href{https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters\#follow}{the Twitter documentation} for a complete description. Keep in mind that this is different from the case when a user follows another user.}
 
 % IMS how did you select those accounts? Can you describe them generically here?  (i.e. "Latvian news outlets, famous actors and politicians, and a selection of Eurovision finalists.")  You should make clear you hand picked them based on background knowledge or if this list was scraped from a public resource, since it reflects effort put into making the collection.
 
@@ -211,12 +209,15 @@ To investigate the collection further, \hl{16} topics of interests were defined.
 \item \texttt{LV006:} \textbf{Christmas} \ Christmas.
 \item \texttt{LV007:} \textbf{New Year} \ New Year.
 \item \texttt{LV008:} \textbf{Olympics} \ The Olympic games and the Latvian team.
+\item \texttt{LV012:} \textbf{March 16} \ Remembrance Day of the Latvian legionnaires.\footnotemark{}
 \end{itemize}
+
+\footnotetext{For more information about the event, refer to \url{http://www.mfa.gov.lv/en/policy/information-on-the-history-of-latvia/the-latvian-government-s-position-on-16-march-events}.}
 
 % IMS I note your topics are titled either in Latvian or English.  Is that intentional?  Does it reflect a goal of boosting content from those languages?  Bigger question: why these topics?  More esoteric question: what value are the topics adding to your collection?  How many topics should you have?
 Topics exhibit various temporal patterns, refer to Figure~\ref{fig:topic_timeline}. The volume of tweets is constant for long-lasting news stories such as the refugee crisis, Brexit and ice hockey.
 %
-During the Ice Hockey World Championship the volume of hockey related tweets increases. Similarly, event-based topics---such as Christmas, New Year and Olympics---are the most active during corresponding events, the volume of tweets slowly builds up as an event approaches.
+During the Ice Hockey World Championship the volume of hockey related tweets increases. Similarly, event-based topics---such as Christmas, New Year and Olympics---are the most active during corresponding events, the volume of tweets builds up as an event approaches.
 
 In case of Christmas, we see unexpected activity in March which is due to the discussion of making the Orthodox Christmas a public holiday in Parliament. This topic exhibits some cultural differences and language use. Tweets in Latvian peak during Advent and Christmas in December, tweets in Russian reach maximum both in December and early January when Orthodox Christmas are celebrated. It is worth noting that during the discussion whether Orthodox Christmas should be a public holiday, it sometimes was referred as ``Russian Christmas.''
 
@@ -224,7 +225,7 @@ Topics about movies are the smallest volume-wise. For a movie that was shown at 
 
 The topic about Winter is an example of a seasonal topic, which is mostly about the weather, the pictures of snow and driving conditions.
 
-Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For all topics the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}). For Russian and English these numbers are generally lower than the global average.
+Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For most topics the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}). For Russian and English these numbers are generally lower than the global average.
 
 The most notable exception being Russian tweets about New Year, probably because of the content written by Russian tourists. The topic about Winter comes close for Russian with respect to the expected average, but is low for English tweets. Interestingly, for the international news topics, there is proportionally more English content about Brexit than about refugees.
 
