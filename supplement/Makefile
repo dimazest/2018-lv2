@@ -24,7 +24,7 @@ relevance_judgments_lang_pref_by_day.csv: rehydrated_tweets_lang_usage.csv
 queries: $(patsubst sql/%.sql,%.csv,$(wildcard sql/*.sql))
 jsonl_queries: $(patsubst sql/%.sql.jsonl,%.jsonl,$(wildcard sql/*.sql.jsonl))
 
-counts.txt: collected_tweets.csv rehydrated_tweets.csv
+counts.txt: collected_tweets.csv rehydrated_tweets.csv rehydrated_tweets_user_tweet_count.csv
 	wc -l $^ > $@
 account_counts.txt: lv.cfg
 	grep -e '^@' $< | wc -l > $@
