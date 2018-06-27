@@ -221,11 +221,11 @@ The topics are:\footnotemark{}
 \footnotetext{For more information about the event, refer to \url{http://www.mfa.gov.lv/en/policy/information-on-the-history-of-latvia/the-latvian-government-s-position-on-16-march-events}.}
 
 % IMS I note your topics are titled either in Latvian or English.  Is that intentional?  Does it reflect a goal of boosting content from those languages?  Bigger question: why these topics?  More esoteric question: what value are the topics adding to your collection?  How many topics should you have?
-Topics exhibit various temporal patterns, refer to Figure~\ref{fig:topic_timeline}. The volume of tweets is constant for long-lasting news stories such as the refugee crisis, Brexit and ice hockey.
+Topics exhibit various temporal patterns, refer to Figure~\ref{fig:topic_timeline}. The volume of tweets is constant for long-lasting news stories such as the centennial celebration, the refugee crisis, Brexit and ice hockey.
 %
 During the Ice Hockey World Championship the volume of hockey related tweets increases. Similarly, event-based topics---such as Christmas, New Year and Olympics---are the most active during corresponding events, the volume of tweets builds up as an event approaches.
 
-In case of Christmas, we see unexpected activity in March which is due to the discussion of making the Orthodox Christmas a public holiday in Parliament. This topic exhibits some cultural differences and language use. Tweets in Latvian peak during Advent and Christmas in December, tweets in Russian reach maximum both in December and early January when Orthodox Christmas are celebrated. It is worth noting that during the discussion whether Orthodox Christmas should be a public holiday, it sometimes was referred as ``Russian Christmas.''
+In case of Christmas, we see unexpected activity in March which is due to the discussion of making the Orthodox Christmas a public holiday in Parliament. This topic exhibits some cultural differences and language use. Tweets in Latvian peak during Advent and Christmas in December, tweets in Russian reach maximum both in December and early January when Orthodox Christmas are celebrated. It is worth noting that during the discussion whether Orthodox Christmas should be a public holiday, it sometimes was referred as ``Russian Christmas.'' In spring, November 11 became a public holiday, thus a spike in activity.  Other event-related topics (May 4, May 8-9, etc.) behave similarly: their activity peaks during the event.
 
 Topics about movies are the smallest volume-wise. For a movie that was shown at several international festivals, we see multilingual content, while tweets about a movie that is still in production are solely monolingual.
 
@@ -233,7 +233,7 @@ The topic about Winter is an example of a seasonal topic, which is mostly about 
 
 Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For most topics the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}). For Russian and English these numbers are generally lower than the global average.
 
-The most notable exception being Russian tweets about New Year, probably because of the content written by Russian tourists. The topic about Winter comes close for Russian with respect to the expected average, but is low for English tweets. Interestingly, for the international news topics, there is proportionally more English content about Brexit than about refugees.
+The most notable exceptions (share of Russian tweets greater than \hl{10\%}) are Russian tweets about New Year and May 8-9. The topic about Winter comes close for Russian (\hl{9.6\%}) with respect to the expected average, but is low for English tweets. Interestingly, for the international news topics, there is proportionally more English content about Brexit than about refugees.
 
 \input{figures/topic_lang_counts.tex}
 
@@ -242,9 +242,15 @@ The most notable exception being Russian tweets about New Year, probably because
 
 % IMS The conclusion does not address any of the questions raised in the abstract/introduction.
 
-This paper presents a multilingual tweet collection with some analysis of users, language use and content. The analysis revealed differences in language use between the geo-located collection, global collection and topical sub-collections.
+This paper presented a multilingual tweet collection with some analysis of users, language use and content. The analysis revealed differences in language use between the geo-located collection, global collection and topical sub-collections.
 
-However, the question of whether the collection is any good remains open. It would be easy to test its extrinsic properties, for example, whether it leads to improvements in a language identification system when used as training data. But does not reveal its intrinsic properties.
+However, the question of whether the collection is any good remains open. It would be easy to test its extrinsic properties, for example, whether it leads to improvements in a language identification system when used as training data. But does not reveal its intrinsic properties. However, we believe the presented dataset might be useful across different studies.
+
+As the corpus includes tweets of major media outlets and public figures, together with retweets and replies, it might be used to analyze public engagement.
+
+From the sociolinguistic perspective, instead of avoiding bias, one could study what linguistic environment the tweets represent. What are the factors determining the language, contents and stance of a tweet. How do these factors interact? Who are the people writing those tweets?
+
+Collection exploration trough keyword search showed that there is a lot of content on various topics and it should be feasible to run a shared retrieval task to evaluate retrieval systems and study what factors determine relevance.
 
 %The challenges of building representative and complete tweet collection are:
 %\begin{itemize}
