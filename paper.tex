@@ -117,6 +117,8 @@ Building an unbiased collection is difficult.  In our case the main reason of th
 \section{Data collection}
 \label{sec:data-collection}
 
+\input{figures/rehydrated_tweets_count_by_day.tex}
+
 Over the period from 15 April 2017 to \hl{8 May 2018} the initial set of \hl{1\,708\,236} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API. Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia. It is small enought to fit into Twitter API restrictions and covers about 40\% of the popilation of Latvia.%\footnotemark{}
 %
 \footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
@@ -172,7 +174,6 @@ Some tweets are crossposts from other social media networks. Facebook content mo
 \section{Language}
 \label{sec:language}
 
-\input{figures/rehydrated_tweets_count_by_day.tex}
 
 Latvian is the dominant language: \hl{917\,259 (73.8\%)} tweets are written in it.\footnotemark{} There are \hl{130\,825 (10.5\%)} tweets in Russian, \hl{122\,490 (9.9\%)} in English and \hl{72\,369\, (6.2\%)} in other languages. This distribution is very different from a geo-located method used in \cite{milajevs:2017:BUCC}, where the distribution is 44.5\% Latvian, 33.9\% Russian and 20.7\% English. Figure~\ref{fig:rehydrated-tweets-count-by-day} shows the tweet volume over time.
 
