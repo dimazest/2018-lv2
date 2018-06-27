@@ -180,7 +180,9 @@ The tweets were written by \hl{41\,170} users. We refer to a user who produced a
 
 Among active users, \hl{789} are monoligual. Exclusively in Latvian write \hl{631} (\hl{80.0\%}), in Russian \hl{40} (\hl{5.1\%}) and in English \hl{118} (\hl{15.0\%}).
 
+The Language uniformity score is defined in \cite{milajevs:2017:BUCC}. It is the normalized number of tweets in the most frequent language. Figure~\ref{fig:uniformity_score} compares the language uniformity scores of active users in this work and in \cite{milajevs:2017:BUCC}. Apart of the higher number of active users in this work (which is expected, as the corpus covers a longer period), the currently presented corpus has more active users with the language uniformity score about 0.5. Even though the majority is mostly monoligual, this work captured more (at least) bilingual users.
 
+\input{figures/uniformity_score.tex}
 
 \footnotetext{Twitter labels tweets with the language they are written in.}
 
@@ -242,6 +244,7 @@ Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and
 The most notable exceptions (share of Russian tweets greater than \hl{10\%}) are Russian tweets about New Year and May 8-9. The topic about Winter comes close for Russian (\hl{9.6\%}) with respect to the expected average, but is low for English tweets. Interestingly, for the international news topics, there is proportionally more English content about Brexit than about refugees.
 
 \input{figures/topic_lang_counts.tex}
+\input{figures/topic_timeline.tex}
 
 \section{Conclusion and future work}
 \label{sec:conclusion}
@@ -265,7 +268,6 @@ Collection exploration trough keyword search showed that there is a lot of conte
 %\item Some tweets are multilingual. How can code-switching be detected reliably?
 %\end{itemize}
 
-\input{figures/topic_timeline.tex}
 
 \bibliographystyle{unsrtnat}
 \bibliography{references,dmilajevs_publications}
