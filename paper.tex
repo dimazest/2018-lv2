@@ -36,7 +36,9 @@
 
 \newcommand{\sn}[1]{\href{https://twitter.com/#1}{\texttt{@#1}}}
 
-\newcommand{\sfile}[1]{\texttt{#1}}
+
+\newcommand{\zenodoBase}{https://zenodo.org/record/1299195}
+\newcommand{\sfile}[1]{\href{\zenodoBase/files/#1}{#1}}
 
 \begin{document}
 \begin{frontmatter}              % The preamble begins here.
@@ -123,11 +125,13 @@ Over the period from 15 April 2017 to \hl{8 May 2018} the initial set of \hl{1\,
 
 In addition to the location, 420 accounts were followed.\footnotemark{} The accounts are mostly Latvian (that is, coming from Latvia, but not necessary produce content in Latvian) news outlets, politicians, businesses, artists and sport clubs. We avoided following personal accounts to respect their privacy. We also avoided bootstrapping the list, as it might have introduced accounts that originate outside of Latvia, for example, \sn{BBC}. The whole list of screen names together with user IDs is available in the supplement file \sfile{lv.cfg}.
 
-\footnotetext{In this paper, by ``following users'', we mean that their user IDs where passed to the Twitter API to collect tweets that they created, retweets of those tweets, or the tweets that are replies by other users to their tweets. Refer to \href{https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters\#follow}{the Twitter documentation} for a complete description. Keep in mind that this is different from the case when a user follows another user.}
+\footnotetext{In this paper, by ``following users'', we mean that their user IDs where passed to the Twitter API to collect tweets that they created, retweets of those tweets, or the tweets that are replies by other users to their tweets. Refer to the \href{https://developer.twitter.com/en/docs/tweets/filter-realtime/guides/basic-stream-parameters\#follow}{Twitter documentation} for a complete description. Keep in mind that this is different from the case when a user follows another user.}
 
 % IMS how did you select those accounts? Can you describe them generically here?  (i.e. "Latvian news outlets, famous actors and politicians, and a selection of Eurovision finalists.")  You should make clear you hand picked them based on background knowledge or if this list was scraped from a public resource, since it reflects effort put into making the collection.
 
-To comply with Twitter's terms of service, on \hl{8 May 2018}, the raw tweet data was redownloaded to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,242\,943} tweets that formed the final collection presented here.
+To comply with Twitter's terms of service, on \hl{8 May 2018}, the raw tweet data was redownloaded to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,242\,943} tweets that formed the final collection presented here.\footnotemark{}
+
+\footnotetext{The supplement files are available at Zenodo: \url{\zenodoBase}. Collected tweet IDs are available as \sfile{collected\_tweets.csv} and the final collection is available as \sfile{rehydrated\_tweets.csv}. The supplement files are licensed under a \href{https://creativecommons.org/publicdomain/zero/1.0/legalcode}{Creative Commons CCZero 1.0 License/Waiver}.}
 
 \section{Twitter users}
 \label{sec:global-analysis}
@@ -192,7 +196,8 @@ Latvian is the dominant language: \hl{917\,259 (73.8\%)} tweets are written in i
 \section{Topics}
 \label{sec:topics}
 
-To investigate the collection further, \hl{16} topics of interests were defined. The collection was manually searched using keywords to get relevant tweets. The topics are:
+To investigate the collection further, \hl{16} topics of interests were defined. The collection was manually searched using keywords to get relevant tweets. The topics are:\footnotemark{}
+\footnotetext{The topic file is available as \sfile{topics.json.txt}.}
 \begin{itemize}
 \item \texttt{LV016:} \textbf{Latvia 100} \ The Centennial Celebration of the Republic of Latvia.
 \item \texttt{LV005:} \textbf{Ice hockey} \ Ice hockey.
