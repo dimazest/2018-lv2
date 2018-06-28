@@ -1,0 +1,334 @@
+[
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "LV100",
+      "centenary ",
+      "100 летие",
+      "юбиле",
+      "Simtgad",
+      "lv99",
+      "simtgadīb",
+      "latvijai100",
+      "LatvijaiSimts",
+      "100 лет",
+      "юбиле",
+      "latvijai99",
+      "юбиле",
+      "столет"
+    ],
+    "title": "Latvia 100",
+    "topid": "LV001"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "LHL",
+      "lhf_lv",
+      "LHF",
+      "KHL",
+      "PČH",
+      "IIHF",
+      "Hārtlijs",
+      "Dinamo",
+      "Динамо",
+      "КХЛ",
+      "Ovečkin",
+      "Овечкин",
+      "VHL",
+      "ВХЛ",
+      "хокке",
+      "hockey",
+      "Znarok",
+      "Знарок",
+      "Знарк",
+      "Hartley",
+      "NHL",
+      "ЛХФ",
+      "CHL",
+      "Ovechkin",
+      "Hokej",
+      "Хартли",
+      "AHL",
+      "НХЛ"
+    ],
+    "title": "Ice Hockey",
+    "topid": "LV002"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "мигрант",
+      "bēgl",
+      "бежен",
+      "massveid",
+      "массов",
+      "Migrāc",
+      "миграц",
+      "migrat",
+      "@PatverumsDM",
+      "Zalcmane",
+      "Grūbe",
+      "Patvērum",
+      "убежищ",
+      "shelter",
+      "migrant",
+      "bēgļ",
+      "refugee"
+    ],
+    "title": "Refugees",
+    "topid": "LV003"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "Breksit",
+      "Lielbritānij es",
+      "Boris Džonson",
+      "Terēz Mej",
+      "Терез Мэй",
+      "Brexit",
+      "Брекзит",
+      "Брексит",
+      "izstāšanās",
+      "переговоры",
+      "Борис Джонсон",
+      "izstāšanos",
+      "выходе",
+      "Великобритани ес"
+    ],
+    "title": "Brexit",
+    "topid": "LV004"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "olimpiskajās spēlēs",
+      "Пхенчхан",
+      "допинг",
+      "LatvijaKorejā ",
+      "Aparjods",
+      "Bendika",
+      "Vasiļjevs",
+      "Puķītis",
+      "LatvijaKoreja",
+      "Phjončhan",
+      "LTVKOREJ",
+      "bobslejsLV",
+      "latvijakorej",
+      "lsmkorej",
+      "медали",
+      "puķītis",
+      "šorttreka",
+      "denissvasiljevs",
+      "denisu",
+      "denisam",
+      "haraldam",
+      "ņikitina",
+      "dreiškens",
+      "KorejasStudija",
+      "daiļslidotājs",
+      "melbārdim",
+      "silovam",
+      "MartinsDukurs",
+      "melbārdis",
+      "tretjakovam",
+      "daiļslidošanas",
+      "золото",
+      "cauce",
+      "daiļslidotāja",
+      "ulla",
+      "šorttrekā",
+      "Мелбардис"
+    ],
+    "title": "Olympics",
+    "topid": "LV005"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "snig",
+      "apledo",
+      "обледе",
+      "зим",
+      "ziemas",
+      "ziemai",
+      "ziemu",
+      "ziemā",
+      "ziemām",
+      "ziemas",
+      "aukstum",
+      "холод",
+      "cold",
+      "dziļš",
+      "sniedziņš",
+      "выпал",
+      "uzsnidzis",
+      "снеж",
+      "putenis or метель or blizzard",
+      "snieg or снег or snow",
+      "ziema"
+    ],
+    "title": "Winter",
+    "topid": "LV006"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "4 maij",
+      "4 мая",
+      "Brīvības svētk",
+      "независимост",
+      "BaltaisGaldauts",
+      "Neatkarības atjaunošana",
+      "Baltā galdauta"
+    ],
+    "title": "May 4",
+    "topid": "LV007"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "(8 or 9) (maij or мая or may)",
+      "(Eiropas dien) or День Европы",
+      "(uzvaras dien) or ден победы",
+      "(8 or 9) maij",
+      "(8 or 9) мая",
+      "(8 or 9) may",
+      "день победы",
+      "Uzvaras park",
+      "(Uzvaras park) or (парк победы)"
+    ],
+    "title": "May 8-9",
+    "topid": "LV008"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "Jāņi",
+      "Līgo",
+      "Лиго",
+      "grass market",
+      "Zāļu tirgus",
+      "Zā tirg",
+      "Травян ярмарк",
+      "Травяная ярмарка",
+      "Midsummer"
+    ],
+    "title": "Midsummer",
+    "topid": "LV009"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "Lāčplē",
+      "факел",
+      "Lāpu gājien",
+      "Lāčplē dien",
+      "лачпле",
+      "Gaismas ceļ",
+      "11 ноябр",
+      "11 novemb"
+    ],
+    "title": "November 11",
+    "topid": "LV010"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "18 novembr",
+      "uguņošana",
+      "салют",
+      "факел",
+      "18 ноябр",
+      "proklamēšan",
+      "республик",
+      "независимост",
+      "uguņošan",
+      "Sveču ceļ",
+      "Lāpu gājien",
+      "провозглаше"
+    ],
+    "title": "November 18",
+    "topid": "LV011"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "Адвент",
+      "Zsvētk",
+      "Ziemassvētk",
+      "Рождеств",
+      "Ziemassvētki",
+      "Рождество",
+      "Christmas",
+      "Advente"
+    ],
+    "title": "Christmas",
+    "topid": "LV012"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "Jaunais gads",
+      "Jauno gadu",
+      "Нов год",
+      "Jaungads",
+      "Новый год",
+      "New Year"
+    ],
+    "title": "New Year",
+    "topid": "LV013"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "16 mart",
+      "leģionār",
+      "16 март",
+      "16  march"
+    ],
+    "title": "March 16",
+    "topid": "LV014"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "MHronika ",
+      "Хроники Мелани",
+      "Melānijas hronika",
+      "The Chronicles of Melanie",
+      "Melānij hronik",
+      "Хроник Мелан"
+    ],
+    "title": "The Chronicles of Melanie",
+    "topid": "LV015"
+  },
+  {
+    "description": null,
+    "narrative": null,
+    "queries": [
+      "dveseluputenis",
+      "Dvēseļu puteņ",
+      "Dvēseļu putenis",
+      "Dvēse pute"
+    ],
+    "title": "Blizzard of Souls",
+    "topid": "LV016"
+  }
+]

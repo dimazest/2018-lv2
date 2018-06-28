@@ -1,4 +1,4 @@
- 1919923 collected_tweets.csv
- 1382351 rehydrated_tweets.csv
-   41171 rehydrated_tweets_user_tweet_count.csv
- 3343445 total
+ 1927070 collected_tweets.csv
+ 1389483 rehydrated_tweets.csv
+   41257 rehydrated_tweets_user_tweet_count.csv
+ 3357810 total
