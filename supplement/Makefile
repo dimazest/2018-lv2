@@ -1,6 +1,6 @@
 PSQL = psql -d twitter -Xq -v ON_ERROR_STOP=1
 
-default: queries jsonl_queries counts.txt account_counts.txt topics.json
+default: queries jsonl_queries counts.txt account_counts.txt topics.json.txt
 
 sql/rehydrated_tweets.sql: sql/collected_tweets.sql
 sql/rehydrated_tweets_*.sql: sql/rehydrated_tweets.sql
@@ -10,7 +10,7 @@ sql/relevance_judgments_*.sql: sql/rehydrated_tweets.sql
 sql/relevance_judgments_lang_pref_by_day.sql: sql/rehydrated_tweets_lang_usage.sql
 
 rehydrated_tweets.csv: collected_tweets.csv
-rehydrated_tweets_*.csv: rehydrated_tweets.csv
+rehydrated_tweets_*.csv: rehydrated_tweets.csv relevance_judgments.csv
 insert_*.csv: collected_tweets.csv
 relevance_judgments_*.csv: relevance_judgments.csv
 relevance_judgments_lang_pref_by_day.csv: rehydrated_tweets_lang_usage.csv
