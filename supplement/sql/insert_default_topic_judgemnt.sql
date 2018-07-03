@@ -1,4 +1,4 @@
-\set RTS_ID LV005
+\set RTS_ID LV002
 \set SCREEN_NAME @@HOCKEY
 
 create temporary table default_judgments as table eval_relevance_judgment with no data
