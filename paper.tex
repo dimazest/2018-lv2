@@ -43,7 +43,7 @@
 \begin{frontmatter}              % The preamble begins here.
 
 %\pretitle{Pretitle}
-\title{Language Bias in a Multilingual Tweet Corpus}
+\title{Language Use in a Multilingual Tweet Corpus}
 %\runningtitle{LV2}
 %\subtitle{Subtitle}
 
@@ -64,9 +64,9 @@
 \address[A]{Guest Researcher at National Institute of Standards and Technology, Maryland, USA}
 %\address[B]{Short Affiliation of Second Author and Third Author}
 
-%\begin{abstract}
-%
-%\end{abstract}
+\begin{abstract}
+A trilingual Latvian-Russian-English corpus of tweets is presented with an analysis of most users, language and topics.
+\end{abstract}
 
 \begin{keyword}
 Corpus Linguistics \sep Latvian \sep Russian \sep English
@@ -78,7 +78,7 @@ Corpus Linguistics \sep Latvian \sep Russian \sep English
 
 \section*{Introduction}
 
-This paper presents a multilingual, location-anchored corpus of tweets from Latvia. The main challenge of collecting a socially representative corpus from this country is that several languages are used there: Latvian, the main communication language and the only official language in Latvia, Russian, the language of the largest minority in Latvia, and English.
+This paper presents a multilingual, location-anchored corpus of tweets from Latvia. The main challenge of collecting a socially representative corpus from this country is that several languages are used there: Latvian, the main communication language and the only official language, Russian, the language of the largest minority, and English.
 
 %%%%%%%%%
 % Problem
@@ -98,7 +98,7 @@ An alternative approach would be to retrieve only geo-located tweets \cite{coats
 %%%%%%%%
 To keep a balance between objectivity and completeness, this work applies a hybrid approach by combining a geo-location based collection procedure with following a curated list of users, which is based on the accounts of Latvian media outlets, politicians, government institutions and public figures.
 
-Our base assumption is that geo-located tweets are a representative and unbiased sample of tweets from Latvia. Thus, an objective collection should exhibit similar properties as the geo-located one. The main property we study in this work is the language proportion. We hypothesize, that an objective extended collection should have similar language distribution as the initial.
+Our base assumption is that geo-located tweets are a representative and unbiased sample of tweets from Latvia. Thus, an objective collection should exhibit similar properties as the geo-located one. The main property we study in this work is the language proportion. We hypothesize, that an objectively extended collection should have similar language distribution as the initial.
 
 To study the collection in more detail, we manually searched the collection for \hl{16} topics of interest.
 
@@ -106,7 +106,7 @@ To study the collection in more detail, we manually searched the collection for 
 % Results
 %%%%%%%%%
 
-The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there are more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only at the ``global level'' (the whole collection), but also at the ``micro level'' (across the topics). \hl{In all but one topic, Latvian is more dominant than expected.}
+The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there are more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only at the ``global level'' (the whole collection), but also at the ``local level'' (across the topics). \hl{In all topics, Latvian is more dominant than expected.}
 
 %%%%%%%%%%%%%
 % So, what...
@@ -120,7 +120,7 @@ Building an unbiased collection is difficult.  In our case the main reason of th
 
 \input{figures/rehydrated_tweets_count_by_day.tex}
 
-Over the period from 15 April 2017 to \hl{8 May 2018} the initial set of \hl{1\,708\,236} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API. Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia. It is small enought to fit into Twitter API restrictions and covers about 40\% of the popilation of Latvia.%\footnotemark{}
+Over the period from 15 April 2017 to \hl{16 July 2018} the initial set of \hl{1\,959\,695} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API. Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia. It is small enought to fit into Twitter API restrictions and covers about 40\% of the popilation of Latvia.\footnotemark{}
 %
 \footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 % IMS.2 according to http://worldpopulationreview.com/countries/latvia-population/, the population of Riga is less than half the total population of Latvia.  However, Twitter only allows bounding boxes for location to be so big, so you can't bound the whole country.
@@ -131,7 +131,7 @@ In addition to the location, 420 accounts were followed.\footnotemark{} The acco
 
 % IMS how did you select those accounts? Can you describe them generically here?  (i.e. "Latvian news outlets, famous actors and politicians, and a selection of Eurovision finalists.")  You should make clear you hand picked them based on background knowledge or if this list was scraped from a public resource, since it reflects effort put into making the collection.
 
-To comply with Twitter's terms of service, on \hl{8 May 2018}, the raw tweet data was redownloaded to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,242\,943} tweets that formed the final collection presented here.\footnotemark{}
+To comply with Twitter's terms of service, on \hl{16 July 2018}, the raw tweet data was redownloaded to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,415\,984} tweets that formed the final collection presented here.\footnotemark{}
 
 \footnotetext{The supplement files are available at Zenodo: \url{\zenodoBase}. Collected tweet IDs are available as \sfile{collected\_tweets.csv} and the final collection is available as \sfile{rehydrated\_tweets.csv}. The supplement files are licensed under a \href{https://creativecommons.org/publicdomain/zero/1.0/legalcode}{Creative Commons CCZero 1.0 License/Waiver}.}
 
@@ -140,16 +140,20 @@ To comply with Twitter's terms of service, on \hl{8 May 2018}, the raw tweet dat
 
 \input{figures/rehydrated_tweets_source_counts.tex}
 
-On average, about \hl{3\,200} tweets were collected per day, which is more than 1\,500 by the geo-location based technique in \cite{milajevs:2017:BUCC}. Most of the tweets came from the official Twitter clients for Web, Android or iPhone. Together these clients contributed more than 60\% of all collected tweets, refer to Table~\ref{tab:source_counts} for more details.
+On average, about \hl{3\,098} tweets were collected per day, which is more than 1\,500 by the geo-location based technique in \cite{milajevs:2017:BUCC}. Most of the tweets came from the official Twitter clients for Web, Android or iPhone. Together these clients contributed more than 60\% of all collected tweets, refer to Table~\ref{tab:source_counts} for more details.
 
-The twitter web client is used by both the general public and media companies. The top 5 of most active accounts consists only of followed Latvian media accounts: \sn{DienaLV} (a newspaper), \sn{LA\_lv} (another newspaper), \sn{JaunsLV} (a media portal), \sn{TV3\_Play} (a TV channel), and \sn{dblv} (a newspaper).
+The top 5 of most active uses of the Twitter Web Client consists only of followed Latvian media accounts: \sn{DienaLV} (a newspaper), \sn{LA\_lv} (another newspaper), \sn{TV3\_Play} (a TV channel), \sn{JaunsLV} (a media portal), and \sn{dblv} (a newspaper).
 
 %Notably, for mobile clients, the majority of tweets comes from \hl{the general public}, because they are either geo-located or mention a followed account.
-The proportion of tweets coming from followed accounts is lower for Android \hl{(8.4\%)} than for iPhone \hl{(13.8\%)}. The difference can be explained by the insight, that all top 5 Android users are personal accounts, while for iPhone there are only 2 personal accounts in the top 5. \sn{TV3zinas} (a news account of a TV channel) tweets the most from iPhone. \sn{Lattelecom} (a telecommunication company) is the second most active iPhone user. \sn{AstrologiLv} writes about astrology and is the fourth most active iPhone user. All three accounts tweet exclusively in Latvian and were followed during corpus collection.
+%
+The proportion of tweets coming from followed accounts is lower for Android \hl{(8.5\%)} than for iPhone \hl{(14.6\%)}. All top 5 Android users are personal accounts, while for iPhone there are 2 personal accounts in the top 5.
+\sn{Lattelecom} (a telecommunication company) is the most active iPhone user. \sn{LRZinas} (a news account of Latvian Radio) is the second most active iPhone user.
+\sn{TV3zinas} (a news account of a TV channel) is the fifth most active iPhone user.
+All three accounts tweet exclusively in Latvian and were followed during corpus collection.
 
 %Client applications that produce tweets mostly from tracked accounts are used by the media. 
 % IMS I don't understand the previous sentence
-For the TweetDeck, TVNET Login, dlvr.it and SKATIES client applications the top 5 users are followed media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not followed and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not followed.
+For the TweetDeck, TVNET, dlvr.it and SKATIES client applications the top 5 users are followed media accounts that write dominantly in Latvian. The exceptions are a business account \sn{Kompresori} that was not followed and tweets in three languages: Latvian, Russian and English, \sn{RusApollo} and \sn{TVNET\_rus} who tweet identical content exclusively in Russian, and \sn{SejasLV}, an exclusively Latvian account writing about celebrities, which was not followed.
 
 % IMS terminology jumble. You are tracking, and also other users are tracking, and you selected users who were tracking (well, actually, probably retweeting) tweets from accounts you were tracking already.  You want this section to read like a recipe for your reader who wants to duplicate your effort in Swahili or whatever.
 
@@ -176,11 +180,11 @@ Some tweets are crossposts from other social media networks. Facebook content mo
 \label{sec:language}
 
 
-Latvian is the dominant language: \hl{917\,259 (73.8\%)} tweets are written in it.\footnotemark{} There are \hl{130\,825 (10.5\%)} tweets in Russian, \hl{122\,490 (9.9\%)} in English and \hl{72\,369\, (6.2\%)} in other languages. This distribution is very different from a geo-located method used in \cite{milajevs:2017:BUCC}, where the distribution is 44.5\% Latvian, 33.9\% Russian and 20.7\% English. Figure~\ref{fig:rehydrated-tweets-count-by-day} shows the tweet volume over time.
+Latvian is the dominant language: \hl{1\,046\,412 (73.9\%)} tweets are written in it.\footnotemark{} There are \hl{149\,366 (10.5\%)} tweets in Russian, \hl{138\,492 (9.8\%)} in English and \hl{81\,714 (5.8\%)} in other languages. This distribution is very different from a geo-located method used in \cite{milajevs:2017:BUCC}, where the distribution is 44.5\% Latvian, 33.9\% Russian and 20.7\% English. Figure~\ref{fig:rehydrated-tweets-count-by-day} shows the tweet volume over time.
 
-The tweets were written by \hl{41\,170} users. We refer to a user who produced at least 50 tweets as an \textit{active user}. There are \hl{2\,766} (\hl{6.7\%}) active users who produced \hl{1\,196\,558} (\hl{86.6\%}) tweets in total.
+The tweets were written by \hl{41\,443} users. We refer to a user who produced at least 50 tweets as an \textit{active user}. There are \hl{2\,786} (\hl{6.7\%}) active users who produced \hl{1\,229\,010} (\hl{86.8\%}) tweets in total.
 
-Among active users, \hl{789} are monoligual. Exclusively in Latvian write \hl{631} (\hl{80.0\%}), in Russian \hl{40} (\hl{5.1\%}) and in English \hl{118} (\hl{15.0\%}).
+Among active users, \hl{797} are monoligual. Exclusively in Latvian write \hl{643} (\hl{80.7\%}), in Russian \hl{40} (\hl{5.0\%}) and in English \hl{114} (\hl{14.3\%}).
 
 The Language uniformity score is defined in \cite{milajevs:2017:BUCC}. It is the normalized number of tweets in the most frequent language. Figure~\ref{fig:uniformity_score} compares the language uniformity scores of active users in this work and in \cite{milajevs:2017:BUCC}. Apart of the higher number of active users in this work (which is expected, as the corpus covers a longer period), the currently presented corpus has more active users with the language uniformity score about 0.5. Even though the majority is mostly monoligual, this work captured more (at least) bilingual users.
 
@@ -241,9 +245,9 @@ Topics about movies are the smallest volume-wise. For a movie that was shown at 
 
 The topic about Winter is an example of a seasonal topic, which is mostly about the weather, the pictures of snow and driving conditions.
 
-Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For most topics the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}). For Russian and English these numbers are generally lower than the global average.
+Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For \hl{all topics}, the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}). For Russian and English these numbers are generally lower than the global average. While for Russian only few topics are more active than expected, it is different for English, where some topics are twice more active than expected.
 
-The most notable exceptions (share of Russian tweets greater than \hl{10\%}) are Russian tweets about New Year and May 8-9. The topic about Winter comes close for Russian (\hl{9.6\%}) with respect to the expected average, but is low for English tweets. Interestingly, for the international news topics, there is proportionally more English content about Brexit than about refugees.
+The topics where share of Russian tweets is greater than \hl{9.8\%}New Year, May 8-9 and Winter. English most active topics are Latvia 100, May 4 and November 18, all of which are public celebrations. 
 
 \input{figures/topic_lang_counts.tex}
 \input{figures/topic_timeline.tex}
@@ -255,11 +259,11 @@ The most notable exceptions (share of Russian tweets greater than \hl{10\%}) are
 
 This paper presented a multilingual tweet collection with some analysis of users, language use and content. The analysis revealed differences in language use between the geo-located collection, global collection and topical sub-collections.
 
-However, the question of whether the collection is any good remains open. It would be easy to test its extrinsic properties, for example, whether it leads to improvements in a language identification system when used as training data. But does not reveal its intrinsic properties. However, we believe the presented dataset might be useful across different studies.
+However, the question of whether the collection is any good remains open. It would be easy to test its extrinsic properties, for example, whether it leads to improvements in a language identification system when used as training data. But does not reveal its intrinsic properties. Nevertheless, we believe the presented dataset is useful across different studies.
 
 As the corpus includes tweets of major media outlets and public figures, together with retweets and replies, it might be used to analyze public engagement.
 
-From the sociolinguistic perspective, instead of avoiding bias, one could study what linguistic environment the tweets represent. What are the factors determining the language, contents and stance of a tweet. How do these factors interact? Who are the people writing those tweets?
+From the sociolinguistic perspective, instead of avoiding collection artifacts such as collection bias, one could study what linguistic environment the tweets represent. What are the factors determining the language, contents and stance of a tweet. How do these factors interact? Who are the people writing those tweets?
 
 Collection exploration trough keyword search showed that there is a lot of content on various topics and it should be feasible to run a shared retrieval task to evaluate retrieval systems and study what factors determine relevance.
 
