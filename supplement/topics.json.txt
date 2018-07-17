@@ -1,6 +1,6 @@
 [
   {
-    "description": null,
+    "description": "The Centennial Celebration of the Republic of Latvia",
     "narrative": null,
     "queries": [
       "LV100",
@@ -23,7 +23,7 @@
     "topid": "LV001"
   },
   {
-    "description": null,
+    "description": "Ice hockey",
     "narrative": null,
     "queries": [
       "LHL",
@@ -59,7 +59,7 @@
     "topid": "LV002"
   },
   {
-    "description": null,
+    "description": "Refugee crisis in Europe, attitude to immigration and immigrants",
     "narrative": null,
     "queries": [
       "мигрант",
@@ -84,7 +84,7 @@
     "topid": "LV003"
   },
   {
-    "description": null,
+    "description": "Withdrawal of the United Kingdom from the European Union known as Brexit",
     "narrative": null,
     "queries": [
       "Breksit",
@@ -106,7 +106,7 @@
     "topid": "LV004"
   },
   {
-    "description": null,
+    "description": "The Olympic games and the Latvian team",
     "narrative": null,
     "queries": [
       "olimpiskajās spēlēs",
@@ -153,7 +153,7 @@
     "topid": "LV005"
   },
   {
-    "description": null,
+    "description": "Winter, snow and cold weather",
     "narrative": null,
     "queries": [
       "snig",
@@ -186,7 +186,7 @@
     "topid": "LV006"
   },
   {
-    "description": null,
+    "description": "The Restoration of Independence Day",
     "narrative": null,
     "queries": [
       "4 maij",
@@ -205,7 +205,7 @@
     "topid": "LV007"
   },
   {
-    "description": null,
+    "description": "Remembrance of the end of Word War II (May 8). It is also honored as the Victory Day on May 9. The Europe Day is observed on May 9.",
     "narrative": null,
     "queries": [
       "8 maij",
@@ -229,7 +229,7 @@
     "topid": "LV008"
   },
   {
-    "description": null,
+    "description": "Midsummer celebration on June 23-24",
     "narrative": null,
     "queries": [
       "Jāņi",
@@ -247,7 +247,7 @@
     "topid": "LV009"
   },
   {
-    "description": null,
+    "description": "A memorial day for soldiers who fought for the independence of Latvia",
     "narrative": null,
     "queries": [
       "Lāčplē",
@@ -263,7 +263,7 @@
     "topid": "LV010"
   },
   {
-    "description": null,
+    "description": "Proclamation Day of the Republic of Latvia",
     "narrative": null,
     "queries": [
       "18 novembr",
@@ -284,7 +284,7 @@
     "topid": "LV011"
   },
   {
-    "description": null,
+    "description": "Christmas",
     "narrative": null,
     "queries": [
       "Адвент",
@@ -300,7 +300,7 @@
     "topid": "LV012"
   },
   {
-    "description": null,
+    "description": "New Year",
     "narrative": null,
     "queries": [
       "Jaunais gads",
@@ -314,7 +314,7 @@
     "topid": "LV013"
   },
   {
-    "description": null,
+    "description": "Remembrance Day of the Latvian legionnaires",
     "narrative": null,
     "queries": [
       "16 mart",
@@ -326,7 +326,7 @@
     "topid": "LV014"
   },
   {
-    "description": null,
+    "description": "Melānijas Hronika (The Chronicles of Melanie) is a Latvian movie that was selected for the Foreign-Language Category for Oscars",
     "narrative": null,
     "queries": [
       "MHronika ",
@@ -340,7 +340,7 @@
     "topid": "LV015"
   },
   {
-    "description": null,
+    "description": "A Latvian movie Dvēseļu puteņis (Blizzard of Souls) that is in production by the time of writing",
     "narrative": null,
     "queries": [
       "dveseluputenis",
