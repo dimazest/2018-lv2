@@ -179,6 +179,7 @@ Some tweets are crossposts from other social media networks. Facebook content mo
 \section{Language}
 \label{sec:language}
 
+\input{figures/uniformity_score.tex}
 
 Latvian is the dominant language: \hl{1\,046\,412 (73.9\%)} tweets are written in it.\footnotemark{} There are \hl{149\,366 (10.5\%)} tweets in Russian, \hl{138\,492 (9.8\%)} in English and \hl{81\,714 (5.8\%)} in other languages. This distribution is very different from a geo-located method used in \cite{milajevs:2017:BUCC}, where the distribution is 44.5\% Latvian, 33.9\% Russian and 20.7\% English. Figure~\ref{fig:rehydrated-tweets-count-by-day} shows the tweet volume over time.
 
@@ -187,8 +188,6 @@ The tweets were written by \hl{41\,443} users. We refer to a user who produced a
 Among active users, \hl{797} are monoligual. Exclusively in Latvian write \hl{643} (\hl{80.7\%}), in Russian \hl{40} (\hl{5.0\%}) and in English \hl{114} (\hl{14.3\%}).
 
 The \textit{language uniformity score} is defined in \cite{milajevs:2017:BUCC}. It is the number of tweets in the most frequent language of a user normalized by the total number of tweets of that user. Figure~\ref{fig:uniformity_score} compares the language uniformity scores of active users in this work and in \cite{milajevs:2017:BUCC}. Apart of the higher number of active users in this work (which is expected, as the corpus covers a longer period), the currently presented corpus has more active users with the language uniformity score about 0.5. Even though the majority is mostly monoligual, this work captured more (at least) bilingual users.
-
-\input{figures/uniformity_score.tex}
 
 \footnotetext{Twitter labels tweets with the language they are written in.}
 
@@ -259,17 +258,13 @@ While for Russian only few topics are more active than expected, it is different
 
 This paper presented a multilingual tweet collection with some analysis of users, language use and content. The analysis revealed differences in language use between the geo-located collection, global collection and topical sub-collections.
 
-However, the question of whether the collection is any good remains open. It would be easy to test its extrinsic properties, for example, whether it leads to improvements in a language identification system when used as training data. But does not reveal its intrinsic properties. Nevertheless, we believe the presented dataset is useful across different studies.
+%However, the question of whether the collection is any good remains open. It would be easy to test its extrinsic properties, for example, whether it leads to improvements in a language identification system when used as training data. But does not reveal its intrinsic properties. Nevertheless, we believe the presented dataset is useful across different studies.
 
 As the corpus includes tweets of major media outlets and public figures, together with retweets and replies, it might be used to analyze public engagement.
 
 From the sociolinguistic perspective, instead of avoiding collection artifacts such as topical bias, one could study what linguistic environment the tweets represent. What are the factors determining the language, contents and stance of a tweet. How do these factors interact? Who are the people writing those tweets?
 
 Collection exploration trough keyword search showed that there is a lot of content on various topics and it should be feasible to run a shared retrieval task based on a multilingual collection from the Baltic region to evaluate retrieval systems and study what factors determine relevance.
-
-Riga was chosen as the basis fro the geo-located collection, but the demographic in the city (larger proportion of ethinc Russians)  is different than in the rest of the country, especially its Western parts (larger proportion of ethnic Latvians). Taking this in the account, our global collection might be less biased that the geo-located one! However, it is an open question, whether geo-location of a larger area, for example, by tracking top 10 largest cities, improves the result.
-
-Is it possible to control for bias using the tools described here? If we tracked more accounts that tweet dominantly in English, would that introduce other biases? Is it possible to select a mixture of topics such that every language would have few topics it dominates? How these topics should be explored?
 
 %The challenges of building representative and complete tweet collection are:
 %\begin{itemize}
