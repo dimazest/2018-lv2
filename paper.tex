@@ -20,10 +20,10 @@
 }
 \def\UrlBreaks{\do\/\do-}
 
-\usepackage{soul}
-\definecolor{hlcolor}{RGB}{255, 221, 163}
-\sethlcolor{hlcolor}
-%\newcommand{\hl}[1]{#1}
+%\usepackage{soul}
+%\definecolor{hlcolor}{RGB}{255, 221, 163}
+%\sethlcolor{hlcolor}
+\newcommand{\hl}[1]{#1}
 
 \usepackage{mathptmx}
 
@@ -65,7 +65,7 @@
 %\address[B]{Short Affiliation of Second Author and Third Author}
 
 \begin{abstract}
-A trilingual Latvian-Russian-English corpus of tweets is presented with an analysis of most users, language and topics.
+A trilingual Latvian-Russian-English corpus of tweets is presented with an analysis of users, language and topics. The corpus consists of 1.4 million tweets that cover a period from April 2017 to July 2018. The language analysis reveals that the majority of users mostly use one language. Across topics, there is more Latvian content than in the whole collection. Among many potential use cases, the corpus can be used, for example, to study the public engagement of major Latvian media outlets and public figures or the factors that determine language choice and content of a tweet.
 \end{abstract}
 
 \begin{keyword}
@@ -89,7 +89,7 @@ Building a monolingual Latvian collection could be done by harvesting tweets tha
 %
 For the same reason, a TREC-like collection building approach \cite{lin2017rts} of filtering the publicly available stream of tweets by language would not work.
 %
-A tweet collection based on a curated list of users \cite{SANVICENTE16.465,L14-1642} is effective, but extra care must be taken as a thematic bias might be introduced.
+A tweet collection based on a curated list of users \cite{SANVICENTE16.465,L14-1642} is effective, but extra care must be taken building the list of users.
 %
 An alternative approach would be to retrieve only geo-located tweets \cite{coats_steven_2017,milajevs:2017:BUCC}. Such a collection would neither be biased linguistically because it is not based on a list of keywords, nor it would be biased thematically because it is not based on a list of users. The downside is that a large number of tweets are not geo-located, which makes retrieval incomplete.
 
@@ -157,7 +157,7 @@ For the TweetDeck, TVNET, dlvr.it and SKATIES client applications the top 5 user
 
 % IMS terminology jumble. You are tracking, and also other users are tracking, and you selected users who were tracking (well, actually, probably retweeting) tweets from accounts you were tracking already.  You want this section to read like a recipe for your reader who wants to duplicate your effort in Swahili or whatever.
 
-TweetDeck is used by \sn{DelfiLV} (a major media portal), \sn{LV\_Portals}, (the official government gazette), \sn{lsmlv} (a publicly funded radio and television organization (LSM)), \sn{ltvzinas} (the news account of Latvian Television) \sn{RietumuRadio} (a radio station). 
+TweetDeck is used by \sn{DelfiLV} (a major media portal), \sn{LV\_Portals}, (the official government gazette), \sn{lsmlv} (a publicly funded radio and television organization, LSM), \sn{ltvzinas} (the news account of Latvian Television) \sn{RietumuRadio} (a radio station). 
 
 TVNET is a media company that controls several media portals. The most active accounts that use their application are \sn{TVnet\_portals}, \sn{RusApollo}, \sn{TVnet\_rus}, \sn{SportsTVNET}, and \sn{SejasLV}. As mentioned above, \sn{RusApollo} and \sn{TVnet\_rus} post identical messages.
 
@@ -186,7 +186,7 @@ The tweets were written by \hl{41\,443} users. We refer to a user who produced a
 
 Among active users, \hl{797} are monoligual. Exclusively in Latvian write \hl{643} (\hl{80.7\%}), in Russian \hl{40} (\hl{5.0\%}) and in English \hl{114} (\hl{14.3\%}).
 
-The Language uniformity score is defined in \cite{milajevs:2017:BUCC}. It is the normalized number of tweets in the most frequent language. Figure~\ref{fig:uniformity_score} compares the language uniformity scores of active users in this work and in \cite{milajevs:2017:BUCC}. Apart of the higher number of active users in this work (which is expected, as the corpus covers a longer period), the currently presented corpus has more active users with the language uniformity score about 0.5. Even though the majority is mostly monoligual, this work captured more (at least) bilingual users.
+The \textit{language uniformity score} is defined in \cite{milajevs:2017:BUCC}. It is the number of tweets in the most frequent language of a user normalized by the total number of tweets of that user. Figure~\ref{fig:uniformity_score} compares the language uniformity scores of active users in this work and in \cite{milajevs:2017:BUCC}. Apart of the higher number of active users in this work (which is expected, as the corpus covers a longer period), the currently presented corpus has more active users with the language uniformity score about 0.5. Even though the majority is mostly monoligual, this work captured more (at least) bilingual users.
 
 \input{figures/uniformity_score.tex}
 
@@ -245,9 +245,9 @@ Topics about movies are the smallest volume-wise. For a movie that was shown at 
 
 The topic about Winter is an example of a seasonal topic, which is mostly about the weather, the pictures of snow and driving conditions.
 
-Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For \hl{all topics}, the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}). For Russian and English these numbers are generally lower than the global average. While for Russian only few topics are more active than expected, it is different for English, where some topics are twice more active than expected.
+Table~\ref{tab:topic_lang_counts} shows the total number of tweets per topic and language share for Latvian, Russian and English. For \hl{all topics}, the share of Latvian tweets is higher than on average in the collection (Section~\ref{sec:language}).
 
-The topics where share of Russian tweets is greater than \hl{9.8\%}New Year, May 8-9 and Winter. English most active topics are Latvia 100, May 4 and November 18, all of which are public celebrations. 
+While for Russian only few topics are more active than expected, it is different for English, where some topics are twice more active than expected. The topics where share of Russian tweets is greater than expected \hl{9.8\%} are New Year, May 8-9 and Winter. English most active topics are Latvia 100, May 4 and November 18, all of which are public celebrations. 
 
 \input{figures/topic_lang_counts.tex}
 \input{figures/topic_timeline.tex}
@@ -263,9 +263,9 @@ However, the question of whether the collection is any good remains open. It wou
 
 As the corpus includes tweets of major media outlets and public figures, together with retweets and replies, it might be used to analyze public engagement.
 
-From the sociolinguistic perspective, instead of avoiding collection artifacts such as collection bias, one could study what linguistic environment the tweets represent. What are the factors determining the language, contents and stance of a tweet. How do these factors interact? Who are the people writing those tweets?
+From the sociolinguistic perspective, instead of avoiding collection artifacts such as topical bias, one could study what linguistic environment the tweets represent. What are the factors determining the language, contents and stance of a tweet. How do these factors interact? Who are the people writing those tweets?
 
-Collection exploration trough keyword search showed that there is a lot of content on various topics and it should be feasible to run a shared retrieval task to evaluate retrieval systems and study what factors determine relevance.
+Collection exploration trough keyword search showed that there is a lot of content on various topics and it should be feasible to run a shared retrieval task based on a multilingual collection from the Baltic region to evaluate retrieval systems and study what factors determine relevance.
 
 %The challenges of building representative and complete tweet collection are:
 %\begin{itemize}
