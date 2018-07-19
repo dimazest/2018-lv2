@@ -98,7 +98,7 @@ An alternative approach would be to retrieve only geo-located tweets \cite{coats
 %%%%%%%%
 To keep a balance between objectivity and completeness, this work applies a hybrid approach by combining a geo-location based collection procedure with following a curated list of users, which is based on the accounts of Latvian media outlets, politicians, government institutions and public figures.
 
-Our base assumption is that geo-located tweets are a representative and unbiased sample of tweets from Latvia. Thus, an objective collection should exhibit similar properties as the geo-located one. The main property we study in this work is the language proportion. We hypothesize, that an objectively extended collection should have similar language distribution as the initial.
+Our base assumption is that geo-located tweets are a representative and unbiased sample of tweets from Latvia. Thus, an objective collection should exhibit similar properties to the geo-located one. The main property we study in this work is the language proportion. We hypothesize, that an objectively extended collection should have similar language distribution as the initial collection.
 
 To study the collection in more detail, we manually searched the collection for \hl{16} topics of interest.
 
@@ -106,7 +106,7 @@ To study the collection in more detail, we manually searched the collection for 
 % Results
 %%%%%%%%%
 
-The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there are more tweets in Latvian in the extended collection than in geo-located. We observe this phenomena not only at the ``global level'' (the whole collection), but also at the ``local level'' (across the topics). \hl{In all topics, Latvian is more dominant than expected.}
+The analysis shows that---despite our attempt---the extended collection is biased toward content in Latvian: proportionally there are more tweets in Latvian in the extended collection than in the geo-located one. We observe this phenomena not only at the ``global level'' (the whole collection), but also at the ``local level'' (across the topics). \hl{In all topics, Latvian is more dominant than expected.}
 
 %%%%%%%%%%%%%
 % So, what...
@@ -120,7 +120,7 @@ Building an unbiased collection is difficult.  In our case the main reason of th
 
 \input{figures/rehydrated_tweets_count_by_day.tex}
 
-Over the period from 15 April 2017 to \hl{16 July 2018} the initial set of \hl{1\,959\,695} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API. Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia. It is small enough to fit into Twitter API restrictions and covers about 40\% of the popilation of Latvia.\footnotemark{}
+Over the period from 15 April 2017 to \hl{16 July 2018} the initial set of \hl{1\,959\,695} tweets was collected from the \texttt{POST status/filter} endpoint of the Twitter Streaming API. Following \cite{milajevs:2017:BUCC}, the \texttt{locations} parameter was set to the bounding box of Riga, the capital of Latvia. It is small enough to fit into Twitter API restrictions and covers about 40\% of the population of Latvia.\footnotemark{}
 %
 \footnotetext{The coordinates of the bounding box are \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}.}
 % IMS.2 according to http://worldpopulationreview.com/countries/latvia-population/, the population of Riga is less than half the total population of Latvia.  However, Twitter only allows bounding boxes for location to be so big, so you can't bound the whole country.
@@ -131,7 +131,7 @@ In addition to the location, 420 accounts were followed.\footnotemark{} The acco
 
 % IMS how did you select those accounts? Can you describe them generically here?  (i.e. "Latvian news outlets, famous actors and politicians, and a selection of Eurovision finalists.")  You should make clear you hand picked them based on background knowledge or if this list was scraped from a public resource, since it reflects effort put into making the collection.
 
-To comply with Twitter's terms of service, on \hl{16 July 2018}, the raw tweet data was redownloaded to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we have noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets which location country code was \texttt{SE} were omitted. This resulted in \hl{1\,415\,984} tweets that formed the final collection presented here.\footnotemark{}
+To comply with Twitter's terms of service, on \hl{16 July 2018}, the raw tweet data was re-downloaded to get rid of deleted tweets. The tweets that originated a retweet were added to the collection. Also, we noticed a large number of tweets that came from Sweden (probably because of the imprecise \texttt{locations} parameter value), so the tweets with the location country code \texttt{SE} were omitted. This resulted in \hl{1\,415\,984} tweets that formed the final collection presented here.\footnotemark{}
 
 \footnotetext{The supplement files are available at Zenodo: \url{\zenodoBase}. Collected tweet IDs are available as \sfile{collected\_tweets.csv} and the final collection is available as \sfile{rehydrated\_tweets.csv}. The supplement files are licensed under a \href{https://creativecommons.org/publicdomain/zero/1.0/legalcode}{Creative Commons CCZero 1.0 License/Waiver}.}
 
@@ -227,8 +227,8 @@ The topics are:\footnotemark{}%
 \item \texttt{LV012:} \textbf{Christmas} \ Christmas.
 \item \texttt{LV013:} \textbf{New Year} \ New Year.
 \item \texttt{LV014:} \textbf{March 16} \ Remembrance Day of the Latvian legionnaires.\footnotemark{}
-\item \texttt{LV015:} \textbf{The Chronicles of Melanie} \ Mel\=anijas Hronika (The Chronicles of Melanie) is a Latvian movie that was selected for the Foreign-Language Category for Oscars.
-\item \texttt{LV006:} \textbf{Blizzard of Souls} \ A Latvian movie Dv\=ese\c{l}u Putenis (Blizzard of Souls) that is in production by the time of writing.
+\item \texttt{LV015:} \textbf{The Chronicles of Melanie} \ Mel\=anijas Hronika (The Chronicles of Melanie) is a Latvian movie that was selected for the Foreign-Language Category for the Oscars.
+\item \texttt{LV016:} \textbf{Blizzard of Souls} \ A Latvian movie Dv\=ese\c{l}u Putenis (Blizzard of Souls) that is in production by the time of writing.
 \end{itemize}
 
 \footnotetext{For more information about the event, refer to \url{http://www.mfa.gov.lv/en/policy/information-on-the-history-of-latvia/the-latvian-government-s-position-on-16-march-events}.}
