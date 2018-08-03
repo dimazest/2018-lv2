@@ -7,18 +7,20 @@
 \usepackage{multirow}
 
 \usepackage{color}
-\usepackage{hyperref}
+% \usepackage{hyperref}
+\newcommand{\url}[1]{#1}
+\newcommand{\href}[2]{#2}
 % http://colorschemedesigner.com/#4o42FfqublRMS
-\definecolor{linkcolor}{RGB}{66, 54, 122}
-\definecolor{citecolor}{RGB}{84, 141, 100}
-\definecolor{urlcolor}{RGB}{168, 70, 67}
-\hypersetup{
-  colorlinks=true,
-  linkcolor=linkcolor,
-  citecolor=citecolor,
-  urlcolor=urlcolor,
-}
-\def\UrlBreaks{\do\/\do-}
+%\definecolor{linkcolor}{RGB}{66, 54, 122}
+%\definecolor{citecolor}{RGB}{84, 141, 100}
+%\definecolor{urlcolor}{RGB}{168, 70, 67}
+%\hypersetup{
+%  colorlinks=true,
+%  linkcolor=linkcolor,
+%  citecolor=citecolor,
+%  urlcolor=urlcolor,
+%}
+%\def\UrlBreaks{\do\/\do-}
 
 %\usepackage{soul}
 %\definecolor{hlcolor}{RGB}{255, 221, 163}
@@ -47,8 +49,8 @@
 %\runningtitle{LV2}
 %\subtitle{Subtitle}
 
-\hypersetup{pdfauthor={Dmitrijs Milajevs}}
-\author[A]{\fnms{Dmitrijs} \snm{Milajevs}%
+%\hypersetup{pdfauthor={Dmitrijs Milajevs}}
+\author{\fnms{Dmitrijs} \snm{Milajevs}%
   \thanks{Corresponding Author: Dmitrijs Milajevs
     %, Guest Researcher,
     %100 Bureau Drive,
@@ -61,7 +63,7 @@
 
 
 \runningauthor{D. Milajevs}
-\address[A]{Guest Researcher at National Institute of Standards and Technology, Maryland, USA}
+\address{Guest Researcher at National Institute of Standards and Technology, Maryland, USA}
 %\address[B]{Short Affiliation of Second Author and Third Author}
 
 \begin{abstract}
@@ -76,7 +78,7 @@ Corpus Linguistics \sep Latvian \sep Russian \sep English
 \thispagestyle{empty}
 \pagestyle{empty}
 
-\section*{Introduction}
+\section{Introduction}
 
 This paper presents a multilingual, location-anchored corpus of tweets from Latvia. The main challenge of collecting a socially representative corpus from this country is that several languages are used there: Latvian, the main communication language and the only official language, Russian, the language of the largest minority, and English.
 
@@ -275,6 +277,6 @@ Collection exploration using keyword search showed that there is a lot of conten
 
 
 \bibliographystyle{unsrtnat}
-\bibliography{references,dmilajevs_publications}
+\bibliography{extracted}
 
 \end{document}
